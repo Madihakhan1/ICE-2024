@@ -6,7 +6,7 @@
   usecase "StartMenu" as UC1
   usecase "CreateUser" as UC2
   usecase "Login" as UC3
-  usecase "Main menu" as UC4
+  usecase "MenuOptions" as UC4
   usecase "Search" as UC5
   usecase "Restaurant" as UC6
   usecase "Category" as UC7
