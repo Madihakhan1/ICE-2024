@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+object StartMenu
+object User
+object MenuOptions
+object Search
+object Order
+object Delivery
+object Discount
+object Payment
+object ShowMenu
+object Items
+
+StartMenu o-- User
+StartMenu *-- MenuOptions
+StartMenu *-- Search
+
+Search *-- Items
+
+MenuOptions o-- Search
+MenuOptions *-- ShowMenu
+
+ShowMenu *-- Items
+
+User *-- Payment
+User o-- Discount
+User o-- Order
+User *-- Delivery
+User o-- MenuOptions
+
+Order *-- Delivery
+Order o-- Discount
+
+@enduml
+
+extends <|-- (is-a)
+composition *-- (must-have)
+Aggregation o-- (can-have)
+Associering <--
