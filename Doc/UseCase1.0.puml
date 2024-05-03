@@ -34,7 +34,6 @@ UC4 --> UC9
 
 
 
-note "This note is connected\nto several objects." as N2
 @enduml
 
 
