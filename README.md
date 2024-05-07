@@ -29,5 +29,6 @@ At kunne gå ind i sin tidligere bestilling og genbestille den samme ordre.
 Leveringspris på bestillingen.
 Brugeren kan rate sin bestilling.
 Brugeren skal kunne filtrere efter leveringspris og rating.
-Randomize rabatuddeling --> nogle restauranter kan have rabat.
-Prøv lykken til rabat eller random mad.
+Randomize rabatuddeling --> nogle restauranter kan have rabat eller brugeren kan få tildelt en random rabat.
+Prøv lykken til rabat --> fx. en leg med 3 forsøg hvor man kan gætte det rigtig tal og få rabat (trække rabtten fra prisen).
+Randomize en tilfælde menu ordre som brugeren vil takke ja eller nej til.
