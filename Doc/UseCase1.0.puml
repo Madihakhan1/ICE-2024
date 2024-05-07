@@ -10,9 +10,10 @@
   usecase "Search" as UC5
   usecase "Restaurant" as UC6
   usecase "Category" as UC7
-  usecase "Order" as UC8
+  usecase "AddToOrderCart" as UC8
   usecase "ShowSavedOrdreHistory" as UC9
   usecase "LogOut" as UC10
+  usecase "PlaceOrder" as UC11
 
 
 user --> UC1
@@ -29,6 +30,8 @@ UC6 --> UC8
 UC5 --> UC7
 UC7 --> UC8
 UC4 --> UC9
+UC8 --> UC11
+UC9--> UC11
 
 
 
