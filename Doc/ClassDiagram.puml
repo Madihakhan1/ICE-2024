@@ -32,7 +32,7 @@ class User{
 
 }
 
-interface MenuOptions {
+class MenuOptions {
 - List<String> Restaurant
 - List<String> Category
 - List<String> Food
@@ -96,10 +96,10 @@ class ShowMenuCard{
 + void getMenuCard
 }
 
-abstract class Restaurant{
-# String restaurantName
-# String[] restaurant
-# double rating
+ class Restaurant{
+- String restaurantName
+- String[] restaurant
+- double rating
 
 + String restaurant(String restaurantName, String [] restaurant, double rating)
 + void getRestaurantName()
