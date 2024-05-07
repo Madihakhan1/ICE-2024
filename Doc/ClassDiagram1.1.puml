@@ -139,7 +139,7 @@ User o-- Discount
 Order *-- Delivery
 
 
-Restaurant .. Items
+Restaurant o-- Items
 Restaurant o-- Discount
 
 
