@@ -23,14 +23,14 @@ class StartMenu{
 }
 
 class User{
-- UserName
-- UserPassword
+- String UserName
+- String UserPassword
 - List <String> Food
 - List <String> Orders
 
 + User(UserName, UserPassword, Address)
-+ getUserName()
-+ getUserPassword()
++ String getUserName()
++ String getUserPassword()
 + List<String> getFood()
 + List<String> getOrders()
 + String toString()
