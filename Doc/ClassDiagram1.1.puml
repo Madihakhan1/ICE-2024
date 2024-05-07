@@ -23,8 +23,9 @@ class StartMenu{
 }
 
 class User{
-- String UserName
-- String UserPassword
+- String userName
+- String userPassword
+- String address;
 - List <String> Food
 - List <String> Orders
 
