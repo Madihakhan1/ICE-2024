@@ -9,7 +9,7 @@ object Order
 object Delivery
 object Discount
 object Payment
-object ShowMenu
+object ShowMenuCard
 object Items
 
 StartMenu o-- User
@@ -19,9 +19,9 @@ StartMenu *-- Search
 Search *-- Items
 
 MenuOptions o-- Search
-MenuOptions *-- ShowMenu
+MenuOptions *-- ShowMenuCard
 
-ShowMenu *-- Items
+ShowMenuCard *-- Items
 
 User *-- Payment
 User o-- Discount
