@@ -1,0 +1,147 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+class Main{
++ static void main(string [] args)
+}
+
+class StartMenu{
+- String name
+- String password
+- String address
+- List<String> Restaurant
+- List<String> Category
+- List<String> Food
+- List<String> Drink
+- List<String> Dessert
+
++ StartMenu(String name, String password, String address)
++ void String CreateUser(name,password,address)
++ Login()
+
++ String toString()
+}
+
+class User{
+- UserName
+- UserPassword
+- List <String> Food
+- List <String> Orders
+
++ User(UserName, UserPassword, Address)
++ getUserName()
++ getUserPassword()
++ List<String> getFood()
++ List<String> getOrders()
++ String toString()
+
+}
+
+
+class Order{
+- List <Items> orders
+
++ Order(List<Items>orders)
++ void String placeOrders()
++ void String displayOrder()
++ void String deleteOrders()
++ String toString()
+}
+
+class Delivery {
+- double delivery
+
++ Delivery(double delivery)
++ void double setDelivery()
++ void double getDelivery()
++ void double calculateDeliveryPrice()
++ String toString()
+}
+
+class Discount{
+- double discount
+
++ Discount(double discount)
++ void double setDiscount()
++ void double getDiscount()
++ void double addDiscountToOrder()
++ String toString()
+}
+
+class Payment{
+- double payment
+
++ Payment(double payment)
++ void double calculatePayment()
++ String toString()
+}
+
+
+ class Restaurant{
+- String restaurantName
+- String[] restaurant
+- double rating
+- String showMenuCard
+- List<String> menuCard
+-List<Restaurant> allRestaurant
+-List <Items> allItems
+
++ String restaurant(String restaurantName, String [] restaurant, double rating)
+
+
++ void getMenuCard()
++ void String searchforCategory()
++ void String searchForResurant()
++ void String searchForItems()
++ void String searchForDeliveryPrice()
++ void String searchForRating()
++ void getRestaurantName()
++ void getRating()
++ void String[] getRestaurant()
+}
+
+class Items{
+- String item
+
++ Item(String item)
++ void getItem()
++ String toString()
+}
+
+class TextUI{
+- Scanner scanner
++ String getInput(String msg)
++ void displayMessage(String msg)
++ int chooseRestaurant(List<Restaurant>)
+}
+
+class FileIO{
++ List<User> readUserData (String path)
++ void saveUserData (List<User> users)
++ List<User>loadAllUserData()
++ void saveOrders (User user)
++ List<String> ShowSavedOrdreHistory(User user)
++ List<Restaurant> readRestuarantData()
++ List<MenuCard> readMenuCardData()
+}
+
+
+Main o-- StartMenu
+
+StartMenu o-- TextUI
+StartMenu o-- FileIO
+StartMenu o-- User
+
+User *-- Payment
+User *-- Order
+User o-- Discount
+
+Order *-- Delivery
+
+
+Restaurant .. Items
+Restaurant o-- Discount
+
+
+
+@enduml
