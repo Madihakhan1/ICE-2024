@@ -3,7 +3,7 @@ import java.util.List;
 public class Discount {
 
     private double discount;
-    List<User> userDiscount;
+    private List<User> userDiscount;
 
     public Discount(double discount){
 

@@ -17,7 +17,7 @@ public void displayOrder(){
             Restaurant order = orders.get(i);
             System.out.println("Order " + (i + 1) + ":");
 
-            for (Restaurant item : order.getItems()) {
+            for (Restaurant item : order.getItem()) {
                 System.out.println("- " + item.getName() + ": $" + item.getPrice());
                 // You can include more details like quantity, special instructions, etc. if needed
             }

@@ -1,13 +1,6 @@
 public class Delivery {
 
-
-
     private double deliveryFee;
-
-
-
-
-
 
     public Delivery(double delivery){
 
@@ -18,8 +11,6 @@ public class Delivery {
     public void setDeliveryFee(double deliveryFee){
 
         this.deliveryFee = deliveryFee;
-
-
 
     }
 

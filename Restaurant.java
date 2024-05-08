@@ -63,7 +63,6 @@ public class Restaurant {
         return restaurant;
     }
 
-
     public String toString(){
         return toString();
     }

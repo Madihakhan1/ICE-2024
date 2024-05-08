@@ -6,64 +6,64 @@ class Main{
 }
 
 class StartMenu{
-
-- List<String> Restaurant
-- List<String> Category
-- List<String> Food
-- List<String> Drink
-- List<String> Dessert
-
-+ StartMenu(String name, String password, String address, List<String> Restaurant, List<String> Category, List<String> Drink, List<String> Dessert
-)
-
+- String userName
+- String userPassword
+- String address
+# List<User> registeredUsers = new LinkedList<>()
+- List<String> restaurant = new ArrayList<>()
+- List<String> category = new ArrayList<>()
+- List<String> food = new ArrayList<>()
+- List<String> drink = new ArrayList<>()
+- List<String> dessert = new ArrayList<>()
+- TextUI ui
+- FileIO io
++ StartMenu(String userName, String userPassword, String address)
 + void CreateUser(String name,String password,String address)
-+ Login()
-
-+ String toString()
++ User Login()
 }
 
 class User{
 - String userName
 - String userPassword
 - String address;
-- List <String> Food
-- List <String> Orders
-
-+ User(UserName, UserPassword, Address)
+- List <String> food
+- List <String> orders
++ User(String userName,String userPassword,String address)
 + String getUserName()
 + String getUserPassword()
 + List<String> getFood()
 + List<String> getOrders()
-+ String toString()
-
++ void setUserName(String userName)
++ void setUserPassword(String userPassword)
++ void setAddress(String address)
++ void setFood(List<String> food)
++ void setOrders(List<String> orders)
++ void getAddress()
 }
 
-
 class Order{
-- List <Items> orders
-
-+ Order(List<Items>orders)
+- List <Restaurant> orders
++ Order(List<Restaurant> orders)
 + void String placeOrders()
-+ void String displayOrder()
-+ void String deleteOrders()
++ void void displayOrder()
++ void void deleteOrders()
 + String toString()
 }
 
 class Delivery {
-- double delivery
-
+- double deliveryFee
 + Delivery(double delivery)
-+ void double setDelivery()
-+ void double getDelivery()
-+ void double calculateDeliveryPrice()
++ void double setDeliveryFee()
++ void double getDeliveryFee()
++ void double calculateDeliveryPrice(double deliveryFee, double distance)
 + String toString()
 }
 
 class Discount{
 - double discount
-
+- List<User> userDiscount
 + Discount(double discount)
-+ void double setDiscount()
++ void void setDiscount()
 + void double getDiscount()
 + void double addDiscountToOrder()
 + String toString()
@@ -71,12 +71,10 @@ class Discount{
 
 class Payment{
 - double payment
-
 + Payment(double payment)
-+ void double calculatePayment()
++ double calculatePayment()
 + String toString()
 }
-
 
  class Restaurant{
 - String restaurantName
@@ -84,27 +82,22 @@ class Payment{
 - double rating
 - String showMenuCard
 - List<String> menuCard
--List<Restaurant> allRestaurant
--List <Items> allItems
-
+- List<Restaurant> allRestaurant
+- List <Restaurant> allItems
 - String item
-
-+ String restaurant(String restaurantName, String [] restaurant, double rating)
++ Restaurant(String restaurantName, String [] restaurant, double rating, String showMenuCard, List<String> menuCard, List<Restaurant> allRestaurant, List <Restaurant> allItems, String item)
 + void getItem()
++ List<String> getMenuCard()
++ String searchforCategory()
++ String searchForResurant()
++ String searchForItems()
++ String searchForDeliveryPrice()
++ String searchForRating()
++ String getRestaurantName()
++ double getRating()
++ String[] getRestaurant()
 + String toString()
-
-+ void getMenuCard()
-+ void String searchforCategory()
-+ void String searchForResurant()
-+ void String searchForItems()
-+ void String searchForDeliveryPrice()
-+ void String searchForRating()
-+ void getRestaurantName()
-+ void getRating()
-+ void String[] getRestaurant()
 }
-
-
 
 class TextUI{
 - Scanner scanner
@@ -114,13 +107,13 @@ class TextUI{
 }
 
 class FileIO{
-+ List<User> readUserData (String path)
+List<User> loadedUsers = new LinkedList<>()
++ List<User> readUserData()
 + void saveUserData (List<User> users)
-+ List<User>loadAllUserData()
 + void saveOrders (User user)
 + List<String> ShowSavedOrdreHistory(User user)
 + List<Restaurant> readRestuarantData()
-+ List<MenuCard> readMenuCardData()
++ List<Restaurant> readMenuCardData()
 }
 
 
