@@ -52,7 +52,18 @@ public class FileIO {
 
 
     public void saveOrders (User user){
-
+        List<String> orders = user.getOrders();
+        try {
+            FileWriter fwSaved = new FileWriter("Doc/savedOrders");
+            String ordresToSave = user.getUserName() + ":";
+            for (String o: orders) {
+                ordresToSave += o + ",";
+            }
+            fwSaved.write(ordresToSave + "\n");
+            fwSaved.close();
+        }catch (IOException e){
+            System.out.println("File was not found");
+        }
     }
 
     public List<String> showSavedOrdreHistory(User user){
