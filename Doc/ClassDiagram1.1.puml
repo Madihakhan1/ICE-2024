@@ -87,8 +87,11 @@ class Payment{
 -List<Restaurant> allRestaurant
 -List <Items> allItems
 
-+ String restaurant(String restaurantName, String [] restaurant, double rating)
+- String item
 
++ String restaurant(String restaurantName, String [] restaurant, double rating)
++ void getItem()
++ String toString()
 
 + void getMenuCard()
 + void String searchforCategory()
@@ -101,13 +104,7 @@ class Payment{
 + void String[] getRestaurant()
 }
 
-class Items{
-- String item
 
-+ Item(String item)
-+ void getItem()
-+ String toString()
-}
 
 class TextUI{
 - Scanner scanner
@@ -140,7 +137,6 @@ User o-- Discount
 Order *-- Delivery
 
 
-Restaurant o-- Items
 Restaurant o-- Discount
 
 
