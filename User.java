@@ -7,16 +7,15 @@ public class User {
     private String userPassword;
     private String address;
 
-    private List<String> food;
-    private List<String> orders;
+    private List<String> food = new ArrayList<>();
+    private List<String> orders = new ArrayList<>();;
 
 
-    public User(String userName, String userPassword, String address, List<String>food, List<String>orders){
+    public User(String userName, String userPassword, String address){
         this.userName = userName;
         this.userPassword = userPassword;
         this.address = address;
-        this.food = new ArrayList<>();
-        this.orders = new ArrayList<>();
+
 
     }
 
@@ -29,16 +28,34 @@ public class User {
     }
 
     public List<String>getFood(){
-
-        return null;
-
+        return food;
     }
 
     public List<String>getOrders(){
-        return null;
+        return orders;
     }
 
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
+    }
 
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
+    public void setFood(List<String> food) {
+        this.food = food;
+    }
+
+    public void setOrders(List<String> orders) {
+        this.orders = orders;
+    }
+
+    public String getAddress() {
+        return address;
+    }
 }

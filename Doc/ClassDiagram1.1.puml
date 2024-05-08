@@ -6,17 +6,17 @@ class Main{
 }
 
 class StartMenu{
-- String name
-- String password
-- String address
+
 - List<String> Restaurant
 - List<String> Category
 - List<String> Food
 - List<String> Drink
 - List<String> Dessert
 
-+ StartMenu(String name, String password, String address)
-+ void String CreateUser(name,password,address)
++ StartMenu(String name, String password, String address, List<String> Restaurant, List<String> Category, List<String> Drink, List<String> Dessert
+)
+
++ void CreateUser(String name,String password,String address)
 + Login()
 
 + String toString()
