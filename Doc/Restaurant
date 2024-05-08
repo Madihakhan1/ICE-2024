@@ -1,0 +1,22 @@
+Restaurant,Category,Food,Drinks,Dessert
+La Trattoria;Italian;Pizza,Pasta,Calzone,Lasagna,Gelato;Espresso,Prosecco;Tiramisu,Cannoli
+El Mariachi;Mexican;Tacos,Burritos,Enchiladas,Quesadillas,Tamales,Margarita;Tequila,Sangria;Churros,Flan
+Sakura Sushi;Japanese;Sushi,Sashimi,Ramen,Udon,Teriyaki,Tempura;Green Tea,Sake;Mochi,Dorayaki
+The Burger Joint;American;Burger,Cheeseburger,Hamburger,Chicken Wings,Hot Dog,French Fries,Milkshake;Apple Pie,Cheesecake
+Dragon Garden;Chinese;Dumplings,Orange Chicken,General Tso's Chicken,Kung Pao Chicken,Beef with Broccoli,Mongolian Beef,Hot and Sour Soup;Bubble Tea,Cola;Egg Tart,Fried Ice Cream
+Taj Mahal;Indian;Curry,Butter Chicken,Tandoori Chicken,Naan,Biryani,Samosa,Lassi;Mango Lassi,Gulab Jamun;Rasgulla,Masala Chai
+Le Croissant;French;Croissant,Quiche,Lamb Casserole,Beef Bourguignon,Coq au Vin,Macarons,Profiteroles;Cafe au Lait, Expresso;Creme Brulee,Tarte Tatin
+Spicy Basil;Thai;Pad Thai,Green Curry,Red Curry,Mango Sticky Rice,Tom Yum Soup,Fried Bananas;Thai Iced Tea,Coconut Water;Thai Tea Ice Cream,Sticky Toffee Pudding
+Olympus Taverna;Greek;Gyro,Souvlaki,Moussaka,Dolmades,Greek Salad,Tzatziki,Ouzo,Metaxa;Frappe,Ice Coffee;Baklava,Greek Yogurt with Honey
+Seoul Kitchen;Korean;Bibimbap,Kimchi Jjigae,Korean BBQ,Bulgogi,Soju,Makgeolli;Bingsu,Tteokbokki;Kimbap,Kimchi Pancake
+Pho King;Vietnamese;Pho,Banh Mi,Bun Cha,Goi Cuon,Cafe Sua Da;Coconut Water,Che Ba Mau;Banh Xeo,Banh Cam
+Bella Italia;Italian;Pizza,Pasta,Risotto,Panini,Tiramisu,Gelato;Espresso,Aperol Spritz;Limoncello,Panna Cotta
+El Sombrero;Mexican;Tacos,Burritos,Quesadillas,Fajitas,Margarita;Tequila,Sangria;Horchata,Flan
+Tokyo Ramen;Japanese;Ramen,Udon,Tempura,Gyoza;Sake,Green Tea,Mochi;Matcha Ice Cream,Dorayaki
+Burger Town;American;Burger,Cheeseburger,Hamburger,Chicken Sandwich,French Fries;Shakes,Root Beer Float;Chocolate Sundae,Apple Pie
+Golden Wok;Chinese;Dumplings,Orange Chicken,General Tso's Chicken,Kung Pao Chicken,Beef and Broccoli;Hot and Sour Soup,Bubble Tea;Almond Cookies,Fortune Cookies
+Taste of India;Indian;Curry,Butter Chicken,Tandoori Chicken,Naan,Biryani,Samosa,Lassi;Mango Lassi,Gajar Halwa;Gulab Jamun,Ras Malai
+Café de Paris;French;Croissant,Quiche,Lamb Casserole,Beef Bourguignon,Coq au Vin,Macarons;Cafe au Lait, Coffee;Creme Brulee,Tarte Tatin
+Bangkok Spice;Thai;Pad Thai,Green Curry,Red Curry,Mango Sticky Rice,Tom Kha Gai,Spring Rolls;Thai Iced Tea,Coconut Water;Coconut Ice Cream, Sticky Rice with Mango
+Acropolis Taverna;Greek;Gyro,Souvlaki,Moussaka,Dolmades,Greek Salad,Tzatziki;Ouzo,Metaxa;Baklava,Rice Pudding
+Seoul BBQ;Korean;Bibimbap,Kimchi Jjigae,Korean BBQ,Bulgogi,Soju,Makgeolli;Bingsu,Tteokbokki;Kimbap,Kimchi Pancake
