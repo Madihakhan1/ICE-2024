@@ -18,6 +18,11 @@ public class TextUI {
 //public int chooseRestaurant(List<Restaurant>){
         //  return chooseRestaurant();
 //}
+public void showAllRestuarants(List<Restaurant> in, String msg){
+    for(Restaurant r: in){
+        displayMessage(in.indexOf(r) + ". " + r.toString());
+    }
+}
 
     }
 
