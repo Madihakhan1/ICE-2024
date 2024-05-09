@@ -3,8 +3,6 @@ import java.util.List;
 
 public class TextUI {
 
-
-
         public String getInput(String msg){
             Scanner scanner = new Scanner(System.in);
             System.out.println(msg);
@@ -28,8 +26,7 @@ public int showAllRestuarants(List<Restaurant> in, String msg){
     //  lav input om til en int
     int choice = Integer.parseInt(input);
     return choice;
-}
-
     }
+}
 
 

@@ -1,5 +1,3 @@
-import jdk.jfr.Category;
-
 import java.util.LinkedList;
 import java.util.List;
 
@@ -53,7 +51,7 @@ public class Foodie {
                 break;
 
             case "2":
-                searchForRestuarant();
+                searchForRestuarantName();
                 break;
 
             case "3":
@@ -73,14 +71,13 @@ public class Foodie {
     public void searchForCategory() {
     }
 
-        public void searchForRestuarant() {
-        }
-
-        public void searchForDeliveryPrice(){
-        }
-
-        public void searchForRating(){
-        }
-
+    public void searchForRestuarantName() {
     }
+
+    public void searchForDeliveryPrice(){
+    }
+
+    public void searchForRating(){
+    }
+}
 

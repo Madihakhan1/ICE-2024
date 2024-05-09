@@ -1,0 +1,170 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+class Main{
++ static void main(string [] args)
+}
+
+class StartMenu{
+- String userName
+- String userPassword
+- String address
+- List<User> registeredUsers = new LinkedList<>()
+
+- TextUI ui
+- FileIO io
++ StartMenu()
++ void CreateUser(String name,String password,String address)
++ User Login()
+}
+
+class User{
+- String userName
+- String userPassword
+- String address;
+- List <String> food
+- List <String> orders
+
++ User(String userName,String userPassword,String address)
++ String getUserName()
++ String getUserPassword()
++ List<String> getFood()
++ List<String> getOrders()
++ void setUserName(String userName)
++ void setUserPassword(String userPassword)
++ void setAddress(String address)
++ void setFood(List<String> food)
++ void setOrders(List<String> orders)
++ void getAddress()
+}
+
+class Order{
+- List <Restaurant> orders
+
++ Order(List<Restaurant> orders)
++ void String placeOrders()
++ void void displayOrder()
++ void void deleteOrders()
++ String toString()
+}
+
+class Foodie {
+- TextUI ui
+- FileIO io
+- StartMenu starmenu
+- User thisUser
+- List<Restaurant>restaurantList
+
++ void setup()
++ void startDialog()
++ void chooseRestaurantDialog()
++ void searchforCategory()
++ void searchForResurantName()
++ void searchForDeliveryPrice()
++ void searchForRating()
+}
+
+class Discount{
+- double discount
+- List<User> userDiscount
++ Discount(double discount)
++ void  setDiscount()
++ double getDiscount()
++ double addDiscountToOrder()
++ String toString()
+}
+
+class Cart{
+
+}
+
+class Food{
+
+- String name;
+
++ Food(String name)
++ String getName()
++ void setName()
+
+}
+
+class Drinks{
+
+- String name;
+
++ Drinks(String name)
++ String getName()
++ void setName()
+
+}
+
+class Dessert{
+
+- String name;
+
++ Dessert(String name)
++ String getName()
++ void setName()
+}
+
+ class Restaurant{
+- String restaurantName
+- String category;
+- double rating;
+- double delivery price
+- List<Drinks> drinksList
+- List<Food> foodList
+- List<Dessert> dessertList
+
++ Restaurant(String resturantName, String category, List<Food> foodList, List<Drinks> drinksList, List<Dessert>dessertList, double ra
++ double deliveryPrice)
+
++ String getRestaurantName()
++ double getRating()
++ double getDeliveryPrice()
+
+}
+
+class TextUI{
+- Scanner scanner
++ String getInput(String msg)
++ void displayMessage(String msg)
++ int chooseRestaurant(List<Restaurant>res)
++ int showAllResturants(List<Restaurant>in.String(msg)
+}
+
+class FileIO{
+List<User> loadedUsers = new LinkedList<>()
++ List<User> readUserData()
++ void saveUserData (List<User> users)
++ void saveOrders (User user)
++ List<String> ShowSavedOrdreHistory(User user)
++ List<Restaurant> readRestuarantData()
+
+
+}
+
+
+Main o-- StartMenu
+
+StartMenu o-- TextUI
+StartMenu o-- FileIO
+StartMenu o-- User
+
+User *-- Order
+User o-- Discount
+
+StartMenu *-- Foodie
+
+Order *-- Cart
+
+Restaurant *-- Food
+Restaurant *-- Drinks
+Restaurant *-- Dessert
+
+
+
+Restaurant o-- Discount
+
+
+@enduml

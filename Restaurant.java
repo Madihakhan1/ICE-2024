@@ -9,13 +9,9 @@ public class Restaurant {
     private double delveryPrice;
     private List<Drinks> drinksList = new LinkedList<>();
     private List<Food> foodList = new LinkedList<>();
-    private List<Dessert>dessertList = new LinkedList<>();
+    private List<Dessert> dessertList = new LinkedList<>();
 
-
-    private StartMenu startMenu = new StartMenu();
-    private User thisUser = null;
-
-    public Restaurant(String restaurantName,String catergory, List<Food>foodList, List<Drinks>drinksList, List<Dessert>dessertList, double rating, double price ){
+    public Restaurant(String restaurantName,String catergory, List<Food>foodList, List<Drinks>drinksList, List<Dessert>dessertList, double rating, double delveryPrice ){
 
         this.restaurantName = restaurantName;
         this.catergory = catergory;
@@ -24,11 +20,7 @@ public class Restaurant {
         this.dessertList = dessertList;
         this.rating = rating;
         this.delveryPrice = delveryPrice;
-
-
     }
-
-
 
     public String getRestaurantName(){
         return restaurantName;
@@ -38,7 +30,7 @@ public class Restaurant {
         return rating;
     }
 
-    public double getDelveryPricePrice() {
+    public double getDelveryPrice() {
         return delveryPrice;
     }
 
