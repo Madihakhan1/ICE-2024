@@ -9,7 +9,7 @@ class StartMenu{
 - String userName
 - String userPassword
 - String address
-# List<User> registeredUsers = new LinkedList<>()
+- List<User> registeredUsers = new LinkedList<>()
 - List<String> restaurant = new ArrayList<>()
 - List<String> category = new ArrayList<>()
 - List<String> food = new ArrayList<>()

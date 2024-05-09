@@ -71,11 +71,28 @@ public class FileIO {
     }
 
     public List<Restaurant> readRestuarantData(){
-        return readRestuarantData();
+
+            File file = new File("Doc/Restaurant"); // Adjust the file path here
+            List<Restaurant> restaurants = new LinkedList<>();
+
+            try (Scanner scan = new Scanner(file)) {
+                while (scan.hasNext()) {
+                    String dataLine = scan.nextLine();
+                    String[] splitted = dataLine.split(",");
+                    String userName = splitted[0].trim();
+                    String restaurantName = splitted[1].trim(); // Restaurant name from file
+
+                    if (userName.equals(user.getUserName())) {
+                        Restaurant restaurant = new Restaurant();
+                        restaurants.add(restaurant);
+                    }
+                }
+            } catch (Exception e) {
+                System.out.println("An error occurred while reading restaurant data: " + e.getMessage());
+            }
+            return restaurants;
+        }
     }
 
-    public List<Restaurant> readMenuCardData(){
-        return readMenuCardData();
-    }
 
-}
+

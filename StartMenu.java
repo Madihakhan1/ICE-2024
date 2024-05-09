@@ -17,14 +17,12 @@ public class StartMenu {
     private TextUI ui = new TextUI();
     private FileIO io = new FileIO();
 
-    public StartMenu(String userName, String userPassword, String address){
-
-        this.userName = userName;
-        this.userPassword = userPassword;
-        this.address = address;
+    public StartMenu(){
+        this.registeredUsers = io.readUserData();
     }
 
-    public void CreateUser(){
+
+    public void createUser(){
 
         ui.displayMessage("Create a user");
 

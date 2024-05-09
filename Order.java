@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.List;
 
 public class Order {
@@ -13,17 +14,23 @@ public String placeOrders(){
 
 public void displayOrder(){
 
-        for (int i = 0; i < orders.size(); i++) {
-            Restaurant order = orders.get(i);
-            System.out.println("Order " + (i + 1) + ":");
+    if(orders.isEmpty()){
+        System.out.println("The order is empty");
 
-            for (Restaurant item : order.getItem()) {
-                System.out.println("- " + item.getName() + ": $" + item.getPrice());
-                // You can include more details like quantity, special instructions, etc. if needed
+        }else{
+        for (Restaurant order : orders) {
+            System.out.println("Order:");
+
+            List<Restaurant> items = order.getItems();
+            for (Restaurant item : items) {
+                System.out.println("- " + item);
             }
-            System.out.println("Total Price: $" + order.getTotalPrice());
 
+            System.out.println("Total Price: $" + order.getPrice());
         }
+    }
+
+
 }
 
 public void deleteOrders(){

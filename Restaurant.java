@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -8,25 +7,48 @@ public class Restaurant {
     private String[] restaurant;
     private double rating;
     private String showMenuCard;
-    private List<String> menuCard;
-    private List<Restaurant> allRestaurant;
-    private List <Restaurant> allItems;
-    private String item;
+    private double price;
+    private List<String> menuCard = new LinkedList<>();
+    private List<Restaurant> allRestaurant = new LinkedList<>();
+    private List<Restaurant> allItems = new LinkedList<>();
+    private List<Restaurant> items = new LinkedList<>();
 
     private TextUI ui = new TextUI();
     private FileIO io = new FileIO();
 
+    private StartMenu startMenu = new StartMenu();
     private User thisUser = null;
 
-    public Restaurant(String restaurantName, String [] restaurant, double rating, String showMenuCard, List<String> menuCard, List<Restaurant> allRestaurant, List <Restaurant> allItems, String item){
-        this.restaurantName = restaurantName;
-        this.restaurant = new String[]{""};
-        this.rating = rating;
-        this.showMenuCard = showMenuCard;
-        this.menuCard = new ArrayList<>();
-        this.allRestaurant = new ArrayList<>();
-        this.allItems = new ArrayList<Restaurant>();
-        this.item = item;
+
+
+public void options(){
+        String differentOptions = ui.getInput("Please choose an option: \n Option 1: search for a category \n Option 2: search for a restuarant \n Option 3: search for a food item \n Option 4: search for a delivery price \n Option 5: search for a rating ");
+ switch (differentOptions){
+     case "1":
+         searchForCategory();
+         break;
+
+     case "2":
+         searchForRestuarant();
+         break;
+
+     case "3":
+         searchForItems();
+         break;
+
+     case "4":
+         searchForDeliveryPrice();
+         break;
+
+     case "5":
+         searchForRating();
+         break;
+
+     case "6":
+        thisUser = null;
+        break;
+ }
+
     }
 
     public void getItem(){
@@ -63,7 +85,7 @@ public class Restaurant {
 
                 case "2":
                     ui.displayMessage("Choose another place");
-                   thisUser.getOrders();
+                    thisUser.getOrders();
                     io.saveOrders(thisUser);
                     break;
             }
@@ -72,17 +94,17 @@ public class Restaurant {
         }
     }
 
-public void eatAtRestuarant(Restaurant chosenRestuarant) {
-    if (chosenRestuarant != null) {
-        ui.displayMessage("Chosen restuarant: " + chosenRestuarant);
-        thisUser.getOrders();
-    } else {
-        ui.displayMessage("Invalid selection. Please try again.");
+    public void eatAtRestuarant(Restaurant chosenRestuarant) {
+        if (chosenRestuarant != null) {
+            ui.displayMessage("Chosen restuarant: " + chosenRestuarant);
+            thisUser.getOrders();
+        } else {
+            ui.displayMessage("Invalid selection. Please try again.");
+        }
     }
-}
 
-    public String searchForResurant(){
-        return searchForResurant();
+    public void searchForRestuarant(){
+
     }
 
     public String searchForItems(){
@@ -109,8 +131,44 @@ public void eatAtRestuarant(Restaurant chosenRestuarant) {
         return restaurant;
     }
 
-    public String toString(){
-        return toString();
+
+    public List<Restaurant> getItems() {
+        return items;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
+public void setUp(){
+        allRestaurant = io.readRestuarantData();
+}
+
+public void startFoodie(){
+    setUp();
+    ui.displayMessage("Welcome to Foodie, do you want to create a user or login?");
+    String options = "";
+    boolean running = true;
+
+    while (running) {
+        if (thisUser != null) {
+            options();
+        } else {
+            options = ui.getInput("Choose an option: \n Option 1: create a user \n option 2: login \n option 3: Exit");
+            switch (options) {
+                case "1":
+                    startMenu.createUser();
+                    break;
+
+                case "2":
+                    thisUser = startMenu.login();
+                    break;
+                case "3":
+                    running = false;
+                    break;
+            }
+        }
+    }
+
+}
 }
