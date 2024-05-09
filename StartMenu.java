@@ -53,12 +53,9 @@ public class StartMenu {
         ui.displayMessage("type your password");
         userPassword = userinput.nextLine();
 
-        ui.displayMessage("Type your address");
-        //address = userinput.nextLine();
-
 
         for(User u : registeredUsers){
-            if(u.getUserName().equals(userName) && u.getUserPassword().equals(userPassword) && u.getAddress().equals(address)){
+            if(u.getUserName().equals(userName) && u.getUserPassword().equals(userPassword)){
                 System.out.println("current user: "+u.getUserName());
                 return u;
 

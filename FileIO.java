@@ -36,8 +36,6 @@ public class FileIO {
     public void saveUserData(List<User> users) {
         File file = new File("Doc/userData");
         try {
-            Scanner scan = new Scanner(file);
-            scan.nextLine();
             FileWriter writer = new FileWriter("Doc/userData");
             writer.write("Name, Password, Address \n");//Giv csv filen en header
             for (User u : users) {
