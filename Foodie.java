@@ -70,20 +70,11 @@ public void chooseRestuarantDialog(){
     }
 }
 
-    public void searchForCategory(){
-        String input = ui.getInput("Search after a catergory ");
-        List<Restaurant> categories = new LinkedList<>();
+    public void searchForCategory() {
+    }
 
-        for(Restaurant r: categories){
-            String s = r.getRestaurantName();
-            if(r.equalsIgnoreCase(input)){
-                categories.add(r);
-            }
+        public void searchForRestuarant() {
         }
-    }
-
-    public void searchForRestuarant(){
-    }
 
     public void searchForDeliveryPrice(){
     }
