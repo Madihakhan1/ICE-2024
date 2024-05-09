@@ -33,66 +33,81 @@ public class FileIO {
     }
 
 
-    public void saveUserData (List<User> users){
+    public void saveUserData(List<User> users) {
         File file = new File("Doc/userData");
         try {
             Scanner scan = new Scanner(file);
             scan.nextLine();
             FileWriter writer = new FileWriter("Doc/userData");
             writer.write("Name, Password, Address \n");//Giv csv filen en header
-            for (User u: users) {
-                String textTosave = u.getUserName()+ "," +u.getUserPassword() + "," + u.getAddress() + "\n";
+            for (User u : users) {
+                String textTosave = u.getUserName() + "," + u.getUserPassword() + "," + u.getAddress() + "\n";
                 writer.write(textTosave);
             }
             writer.close();
-        }catch (IOException e){
+        } catch (IOException e) {
             System.out.println("File was not found");
         }
     }
 
 
-    public void saveOrders (User user){
+    public void saveOrders(User user) {
         List<String> orders = user.getOrders();
         try {
             FileWriter fwSaved = new FileWriter("Doc/savedOrders");
             String ordresToSave = user.getUserName() + ":";
-            for (String o: orders) {
+            for (String o : orders) {
                 ordresToSave += o + ",";
             }
             fwSaved.write(ordresToSave + "\n");
             fwSaved.close();
-        }catch (IOException e){
+        } catch (IOException e) {
             System.out.println("File was not found");
         }
     }
 
-    public List<String> showSavedOrdreHistory(User user){
+    public List<String> showSavedOrdreHistory(User user) {
         return showSavedOrdreHistory(user);
     }
 
-    public List<Restaurant> readRestuarantData(){
+    public List<Restaurant> readRestuarantData() {
 
-            File file = new File("Doc/Restaurant"); // Adjust the file path here
-            List<Restaurant> restaurants = new LinkedList<>();
 
-            try (Scanner scan = new Scanner(file)) {
+        {
+            File file = new File("Doc/Restaurant");
+            List<Restaurant> restuarants = new LinkedList<>();
+            String catergory;
+            List<Food>foodList = new LinkedList<>();
+            List<Drinks>drinkList = new LinkedList<>();
+            List<Dessert> dessertList = new LinkedList<>();
+
+            try {
+                Scanner scan = new Scanner(file);
+                scan.nextLine();
                 while (scan.hasNext()) {
-                    String dataLine = scan.nextLine();
-                    String[] splitted = dataLine.split(",");
-                    String userName = splitted[0].trim();
-                    String restaurantName = splitted[1].trim(); // Restaurant name from file
+                    String restaurantLine = scan.nextLine();
+                    String[] splitted = restaurantLine.split(";");
+                    catergory = splitted[1].trim();
+                    String restaurantName = splitted[0].trim();
+                    String[] foodString = splitted[2].split(",");
+                    String[] drinksString = splitted[3].split(",");
+                    String[] dessertString = splitted[4].split(",");
 
-                    if (userName.equals(user.getUserName())) {
-                        Restaurant restaurant = new Restaurant();
-                        restaurants.add(restaurant);
+                    for (int i = 0; i < foodString.length; i++) {
+                        foodList.add(new Food(foodString[i].trim()));
+                        // Create a new Restaurant object with the restaurant name
+                        restuarants.add(new Restaurant(restaurantName, catergory, foodList, drinkList, dessertList, 0 , 0));
                     }
                 }
-            } catch (Exception e) {
+            } catch(Exception e){
                 System.out.println("An error occurred while reading restaurant data: " + e.getMessage());
             }
-            return restaurants;
+            return restuarants;
         }
     }
+
+
+}
 
 
 

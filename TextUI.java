@@ -4,13 +4,16 @@ import java.util.List;
 public class TextUI {
 
 
-        private Scanner scanner;
 
         public String getInput(String msg){
-            return msg;
+            Scanner scanner = new Scanner(System.in);
+            System.out.println(msg);
+            String res = scanner.nextLine();
+            return res;
         }
 
         public void displayMessage(String msg){
+            System.out.println(msg);
 
         }
 

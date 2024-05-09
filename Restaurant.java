@@ -4,21 +4,29 @@ import java.util.List;
 public class Restaurant {
 
     private String restaurantName;
-    private String[] restaurant;
+    private String catergory;
     private double rating;
-    private String showMenuCard;
-    private double price;
-    private List<String> menuCard = new LinkedList<>();
-    private List<Restaurant> allRestaurant = new LinkedList<>();
-    private List<Restaurant> allItems = new LinkedList<>();
-    private List<Restaurant> items = new LinkedList<>();
+    private double delveryPrice;
+    private List<Drinks> drinksList = new LinkedList<>();
+    private List<Food> foodList = new LinkedList<>();
+    private List<Dessert>dessertList = new LinkedList<>();
 
-    private TextUI ui = new TextUI();
-    private FileIO io = new FileIO();
 
     private StartMenu startMenu = new StartMenu();
     private User thisUser = null;
 
+    public Restaurant(String restaurantName,String catergory, List<Food>foodList, List<Drinks>drinksList, List<Dessert>dessertList, double rating, double price ){
+
+        this.restaurantName = restaurantName;
+        this.catergory = catergory;
+        this.foodList = foodList;
+        this.drinksList = drinksList;
+        this.dessertList = dessertList;
+        this.rating = rating;
+        this.delveryPrice = delveryPrice;
+
+
+    }
 
 
 public void options(){
@@ -127,48 +135,9 @@ public void options(){
         return rating;
     }
 
-    public String[] getRestaurant(){
-        return restaurant;
-    }
-
-
-    public List<Restaurant> getItems() {
-        return items;
-    }
-
     public double getPrice() {
         return price;
     }
 
-public void setUp(){
-        allRestaurant = io.readRestuarantData();
 }
 
-public void startFoodie(){
-    setUp();
-    ui.displayMessage("Welcome to Foodie, do you want to create a user or login?");
-    String options = "";
-    boolean running = true;
-
-    while (running) {
-        if (thisUser != null) {
-            options();
-        } else {
-            options = ui.getInput("Choose an option: \n Option 1: create a user \n option 2: login \n option 3: Exit");
-            switch (options) {
-                case "1":
-                    startMenu.createUser();
-                    break;
-
-                case "2":
-                    thisUser = startMenu.login();
-                    break;
-                case "3":
-                    running = false;
-                    break;
-            }
-        }
-    }
-
-}
-}

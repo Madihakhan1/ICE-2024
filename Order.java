@@ -12,7 +12,7 @@ public String placeOrders(){
     return placeOrders();
 }
 
-public void displayOrder(){
+/*public void displayOrder(){
 
     if(orders.isEmpty()){
         System.out.println("The order is empty");
@@ -32,7 +32,7 @@ public void displayOrder(){
 
 
 }
-
+*/
 public void deleteOrders(){
 
   orders.clear();
