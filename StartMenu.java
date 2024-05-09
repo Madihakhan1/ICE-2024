@@ -7,21 +7,13 @@ public class StartMenu {
     private String address;
     protected List<User> registeredUsers = new LinkedList<>();
 
-
-    private List<String> restaurant = new ArrayList<>();
-    private List<String> category = new ArrayList<>();
-    private List<String> food = new ArrayList<>();
-    private List<String> drink = new ArrayList<>();
-    private List<String> dessert = new ArrayList<>();
-
     private TextUI ui = new TextUI();
     private FileIO io = new FileIO();
 
     public StartMenu(){
         this.registeredUsers = io.readUserData();
     }
-
-
+    
     public void createUser(){
 
         ui.displayMessage("Create a user");
