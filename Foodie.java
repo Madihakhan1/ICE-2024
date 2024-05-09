@@ -15,7 +15,6 @@ public class Foodie {
         restaurantsList = io.readRestuarantData();
     }
 
-
     public void startDialog() {
         setUp();
         ui.displayMessage("Welcome to Foodie, do you want to create a user or login?");
@@ -45,7 +44,7 @@ public class Foodie {
 
 
 public void chooseRestuarantDialog(){
-    String differentOptions = ui.getInput("Please choose an option: \n Option 1: search for a category \n Option 2: search for a restuarant \n Option 3: search for a delivery price \n Option 4: search for a rating ");
+    String differentOptions = ui.getInput("Please choose an option: \n Option 1: search after category \n Option 2: search after a restuarant \n Option 3: search after a delivery price \n Option 4: search after rating ");
     switch (differentOptions){
         case "1":
            // searchForCategory();
@@ -68,19 +67,6 @@ public void chooseRestuarantDialog(){
             break;
     }
 }
-
-
-    public void searchForRestuarant(){
-    }
-
-
-    public String searchForDeliveryPrice(){
-        return searchForDeliveryPrice();
-    }
-
-    public String searchForRating(){
-        return searchForRating();
-    }
 
   /*  public void searchForCategory(){
         String input = ui.getInput("Write the catergory you are looking for");
@@ -125,5 +111,14 @@ public void chooseRestuarantDialog(){
             ui.displayMessage("Invalid selection. Please try again.");
         }
     }*/
+
+    public void searchForRestuarant(){
+    }
+
+    public void searchForDeliveryPrice(){
+    }
+
+    public void searchForRating(){
+    }
 
 }

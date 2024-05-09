@@ -13,7 +13,7 @@ public class StartMenu {
     public StartMenu(){
         this.registeredUsers = io.readUserData();
     }
-    
+
     public void createUser(){
 
         ui.displayMessage("Create a user");

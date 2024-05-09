@@ -69,8 +69,6 @@ public class FileIO {
     }
 
     public List<Restaurant> readRestuarantData() {
-
-
         {
             File file = new File("Doc/Restaurant");
             List<Restaurant> restuarants = new LinkedList<>();
@@ -103,8 +101,6 @@ public class FileIO {
             return restuarants;
         }
     }
-
-
 }
 
 
