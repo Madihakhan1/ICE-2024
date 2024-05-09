@@ -37,9 +37,8 @@ public class Restaurant {
         return menuCard;
     }
 
-    public String searchForCategory(){
-        System.out.println(" ");
-        String input = ui.getInput("Write the genre you are looking for");
+    public void searchForCategory(){
+        String input = ui.getInput("Write the catergory you are looking for");
         List<Restaurant> restaurantCatergory = new LinkedList<>();
         for (Restaurant r : allRestaurant) {
             for (String s : r.getRestaurant()) {
@@ -48,7 +47,7 @@ public class Restaurant {
                 }
             }
         }
-        ui.showAllRestuarants(restaurantCatergory);
+        ui.showAllRestuarants(restaurantCatergory, " ");
         int chosenIndexRestuarant = ui.showAllRestuarants(restaurantCatergory, "Please choose a restuarant ");
         if (chosenIndexRestuarant >= 0 && chosenIndexRestuarant < restaurantCatergory.size()) {
             Restaurant chosenRestuarant = restaurantCatergory.get(chosenIndexRestuarant);
@@ -57,30 +56,31 @@ public class Restaurant {
             String choice = ui.getInput("1. Eat here, 2. Another place");
             switch (choice) {
                 case "1":
-                    eatAtRestuarant(chosenRestuarant); // Pass the chosen movie to the play() method
-                    User.placeOrders(chosenRestuarant.getRestaurantName());
+                    eatAtRestuarant(chosenRestuarant);
+                    thisUser.getOrders();
                     io.saveOrders(thisUser);
                     break;
 
                 case "2":
-                    ui.displayMessage("you can chose somewhere else " + searchForCategory());
-                    User.placeOrders(chosenRestuarant.getRestaurantName());
+                    ui.displayMessage("Choose another place");
+                   thisUser.getOrders();
                     io.saveOrders(thisUser);
                     break;
             }
-            //play(chosenMovie); // Pass the chosen movie to the play() method
         } else {
             ui.displayMessage("Invalid selection.");
         }
     }
+
 public void eatAtRestuarant(Restaurant chosenRestuarant) {
     if (chosenRestuarant != null) {
-        ui.displayMessage("Now playing: " + chosenRestuarant);
-        User.order(chosenRestuarant.getResturant);
+        ui.displayMessage("Chosen restuarant: " + chosenRestuarant);
+        thisUser.getOrders();
     } else {
         ui.displayMessage("Invalid selection. Please try again.");
     }
 }
+
     public String searchForResurant(){
         return searchForResurant();
     }

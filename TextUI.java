@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.util.List;
-import java.util.Scanner;
 
 public class TextUI {
 
@@ -18,10 +17,13 @@ public class TextUI {
 //public int chooseRestaurant(List<Restaurant>){
         //  return chooseRestaurant();
 //}
-public void showAllRestuarants(List<Restaurant> in, String msg){
-    for(Restaurant r: in){
-        displayMessage(in.indexOf(r) + ". " + r.toString());
-    }
+public int showAllRestuarants(List<Restaurant> in, String msg){
+    displayMessage(msg);
+    //displayList(optionslist, "");
+    String input = getInput("");//1
+    //  lav input om til en int
+    int choice = Integer.parseInt(input);
+    return choice;
 }
 
     }
