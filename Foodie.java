@@ -13,7 +13,7 @@ public class Foodie {
 
     private List<Restaurant> restaurantsList;
 
-    public void setUp(){
+    public void setUp() {
         restaurantsList = io.readRestuarantData();
     }
 
@@ -45,30 +45,30 @@ public class Foodie {
     }
 
 
-public void chooseRestuarantDialog(){
-    String differentOptions = ui.getInput("Please choose an option: \n Option 1: search after category \n Option 2: search after a restuarant \n Option 3: search after a delivery price \n Option 4: search after rating ");
-    switch (differentOptions){
-        case "1":
-           searchForCategory();
-            break;
+    public void chooseRestuarantDialog() {
+        String differentOptions = ui.getInput("Please choose an option: \n Option 1: search after category \n Option 2: search after a restuarant \n Option 3: search after a delivery price \n Option 4: search after rating ");
+        switch (differentOptions) {
+            case "1":
+                searchForCategory();
+                break;
 
-        case "2":
-            searchForRestuarant();
-            break;
+            case "2":
+                searchForRestuarant();
+                break;
 
-        case "3":
-            searchForDeliveryPrice();
-            break;
+            case "3":
+                searchForDeliveryPrice();
+                break;
 
-        case "4":
-            searchForRating();
-            break;
+            case "4":
+                searchForRating();
+                break;
 
-        case "5":
-            thisUser = null;
-            break;
+            case "5":
+                thisUser = null;
+                break;
+        }
     }
-}
 
     public void searchForCategory() {
     }
@@ -76,10 +76,11 @@ public void chooseRestuarantDialog(){
         public void searchForRestuarant() {
         }
 
-    public void searchForDeliveryPrice(){
+        public void searchForDeliveryPrice(){
+        }
+
+        public void searchForRating(){
+        }
+
     }
 
-    public void searchForRating(){
-    }
-
-}
