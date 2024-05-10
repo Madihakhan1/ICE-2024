@@ -4,9 +4,9 @@ import java.util.List;
 public class Restaurant {
 
     private String restaurantName;
-    private String catergory;
-    private double rating;
-    private double delveryPrice;
+    private String category;
+    private String rating;
+    private String delveryPrice;
     private List<Drinks> drinksList = new LinkedList<>();
     private List<Food> foodList = new LinkedList<>();
     private List<Dessert> dessertList = new LinkedList<>();
@@ -22,7 +22,7 @@ public class Restaurant {
         this.delveryPrice = delveryPrice;
     }
 
-    public String getRestaurantName(){
+    public String getRestaurantName() {
         return restaurantName;
     }
 
@@ -34,5 +34,29 @@ public class Restaurant {
         return delveryPrice;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+
+
+
+    @Override
+
+    public String toString() {
+
+
+        StringBuilder out = new StringBuilder();
+        out.append("Restaurant Name: ").append(this.restaurantName).append(", ");
+        out.append("Category: ").append(this.category).append(", ");
+        out.append("Food List: ").append(this.foodList).append(", ");
+        out.append("Drinks List: ").append(this.drinksList).append(", ");
+        out.append("Dessert List: ").append(this.dessertList);
+
+        return out.toString();
+
+    }
 }
+
+
 

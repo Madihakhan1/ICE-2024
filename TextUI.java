@@ -16,9 +16,6 @@ public class TextUI {
         }
 
 
-//public int chooseRestaurant(List<Restaurant>){
-        //  return chooseRestaurant();
-//}
 public int showAllRestuarants(List<Restaurant> in, String msg){
     displayMessage(msg);
     //displayList(optionslist, "");

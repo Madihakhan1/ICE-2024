@@ -67,40 +67,47 @@ public class FileIO {
     public List<String> showSavedOrdreHistory(User user) {
         return showSavedOrdreHistory(user);
     }
+    public List<Restaurant> readRestaurantData() {
+        File file = new File("Doc/Restaurant");
+        List<Restaurant> restaurants = new LinkedList<>();
 
-    public List<Restaurant> readRestuarantData() {
-        {
-            File file = new File("Doc/Restaurant");
-            List<Restaurant> restuarants = new LinkedList<>();
-            String catergory;
-            List<Food>foodList = new LinkedList<>();
-            List<Drinks>drinkList = new LinkedList<>();
-            List<Dessert> dessertList = new LinkedList<>();
+        try {
+            Scanner scan = new Scanner(file);
+            scan.nextLine(); // Skip the header line
+            while (scan.hasNext()) {
+                String restaurantLine = scan.nextLine();
+                String[] splitted = restaurantLine.split(";");
+                String category = splitted[1].trim();
+                String restaurantName = splitted[0].trim();
+                String[] foodString = splitted[2].split(",");
+                String[] drinksString = splitted[3].split(",");
+                String[] dessertString = splitted[4].split(",");
 
-            try {
-                Scanner scan = new Scanner(file);
-                scan.nextLine();
-                while (scan.hasNext()) {
-                    String restaurantLine = scan.nextLine();
-                    String[] splitted = restaurantLine.split(";");
-                    catergory = splitted[1].trim();
-                    String restaurantName = splitted[0].trim();
-                    String[] foodString = splitted[2].split(",");
-                    String[] drinksString = splitted[3].split(",");
-                    String[] dessertString = splitted[4].split(",");
-
-                    for (int i = 0; i < foodString.length; i++) {
-                        foodList.add(new Food(foodString[i].trim()));
-                        // Create a new Restaurant object with the restaurant name
-                        restuarants.add(new Restaurant(restaurantName, catergory, foodList, drinkList, dessertList, 0 , 0));
-                    }
+                List<Food> foodList = new LinkedList<>();
+                for (String foodItem : foodString) {
+                    foodList.add(new Food(foodItem.trim()));
                 }
-            } catch(Exception e){
-                System.out.println("An error occurred while reading restaurant data: " + e.getMessage());
+
+                List<Drinks> drinkList = new LinkedList<>();
+                for (String drinkItem : drinksString) {
+                    drinkList.add(new Drinks(drinkItem.trim()));
+                }
+
+                List<Dessert> dessertList = new LinkedList<>();
+                for (String dessertItem : dessertString) {
+                    dessertList.add(new Dessert(dessertItem.trim()));
+                }
+
+                // Create a new Restaurant object with the restaurant name and its details
+                restaurants.add(new Restaurant(restaurantName, category, foodList, drinkList, dessertList, "", ""));
             }
-            return restuarants;
+        } catch(Exception e){
+            System.out.println("An error occurred while reading restaurant data: " + e.getMessage());
         }
+        return restaurants;
     }
+
+
 }
 
 

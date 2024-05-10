@@ -69,6 +69,18 @@ public class Foodie {
     }
 
     public void searchForCategory() {
+        System.out.println(" ");
+
+        String input = ui.getInput("Write the category you are looking for");
+
+        List<Restaurant> restaurantsByCategory = new LinkedList<>();
+
+        for (Restaurant restaurantbyCategory : restaurantsList) {
+            String g = restaurantbyCategory.getCategory();
+            if (g.equalsIgnoreCase(input)) {
+                restaurantsByCategory.add(restaurantbyCategory);
+            }
+        }
     }
 
     public void searchForRestuarantName() {
@@ -77,7 +89,28 @@ public class Foodie {
     public void searchForDeliveryPrice(){
     }
 
-    public void searchForRating(){
+    public void searchForRating() {
+
+        System.out.println(" ");
+
+        String input = ui.getInput("Search for rating");
+        List<Restaurant> searchRating = new LinkedList<>();
+
+        for (Restaurant searchForRating : restaurantsList) {
+            String r = searchForRating.getRating();
+            if(r.equalsIgnoreCase(input)){
+                searchRating.add(searchForRating);
+
+            }
+        }
     }
 }
+
+
+
+
+
+
+
+
 
