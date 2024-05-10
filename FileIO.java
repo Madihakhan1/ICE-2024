@@ -83,6 +83,7 @@ public class FileIO {
                 String[] drinksString = splitted[3].split(",");
                 String[] dessertString = splitted[4].split(",");
 
+
                 List<Food> foodList = new LinkedList<>();
                 for (String foodItem : foodString) {
                     foodList.add(new Food(foodItem.trim()));
@@ -98,8 +99,9 @@ public class FileIO {
                     dessertList.add(new Dessert(dessertItem.trim()));
                 }
 
+
                 // Create a new Restaurant object with the restaurant name and its details
-                restaurants.add(new Restaurant(restaurantName, category, foodList, drinkList, dessertList, "", ""));
+                restaurants.add(new Restaurant(restaurantName, category, foodList, drinkList, dessertList,"",""));
             }
         } catch(Exception e){
             System.out.println("An error occurred while reading restaurant data: " + e.getMessage());

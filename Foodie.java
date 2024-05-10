@@ -89,7 +89,7 @@ public class Foodie {
     public void searchForDeliveryPrice(){
     }
 
-    public void searchForRating() {
+   public void searchForRating() {
 
         System.out.println(" ");
 

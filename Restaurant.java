@@ -11,10 +11,10 @@ public class Restaurant {
     private List<Food> foodList = new LinkedList<>();
     private List<Dessert> dessertList = new LinkedList<>();
 
-    public Restaurant(String restaurantName,String catergory, List<Food>foodList, List<Drinks>drinksList, List<Dessert>dessertList, double rating, double delveryPrice ){
+    public Restaurant(String restaurantName, String category, List<Food> foodList, List<Drinks> drinksList, List<Dessert> dessertList, String rating, String delveryPrice) {
 
         this.restaurantName = restaurantName;
-        this.catergory = catergory;
+        this.category = category;
         this.foodList = foodList;
         this.drinksList = drinksList;
         this.dessertList = dessertList;
@@ -26,11 +26,11 @@ public class Restaurant {
         return restaurantName;
     }
 
-    public double getRating(){
+    public String getRating() {
         return rating;
     }
 
-    public double getDelveryPrice() {
+    public String getDelveryPrice() {
         return delveryPrice;
     }
 
