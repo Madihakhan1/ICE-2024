@@ -76,21 +76,32 @@ public class Foodie {
 
 
     public void searchForCategory() {
-        System.out.println(" ");
+            System.out.println(" ");
 
-        String input = ui.getInput("Write the category you are looking for");
+            String input = ui.getInput("Write the category you are looking for");
 
-        List<Restaurant> restaurantsByCategory = new LinkedList<>();
+            List<Restaurant> restaurantsByCategory = new LinkedList<>();
 
-        for (Restaurant restaurantbyCategory : restaurantsList) {
-            String g = restaurantbyCategory.getCategory();
-            if (g.equalsIgnoreCase(input)) {
-                restaurantsByCategory.add(restaurantbyCategory);
+            for (Restaurant restaurant : restaurantsList) {
+                String category = restaurant.getCategory();
+                if (category.equalsIgnoreCase(input)) {
+                    restaurantsByCategory.add(restaurant);
+                }
             }
-        }
+
+            if (restaurantsByCategory.isEmpty()) {
+                System.out.println("No restaurants found in category: " + input);
+            } else {
+                System.out.println("Restaurants in category " + input + ":");
+                for (Restaurant r : restaurantsByCategory) {
+                    System.out.println(r);
+                }
+            }
+              choice(ui.getInput("Choose one of the restuarants"));
+
     }
 
-    public void searchForRestuarantName() {
+        public void searchForRestuarantName() {
         System.out.println(" ");
         String input = ui.getInput("Write the name of the Restuarant you a looking for");
         List<Restaurant> restaurantsByName = new LinkedList<>();
