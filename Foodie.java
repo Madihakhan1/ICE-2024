@@ -25,7 +25,7 @@ public class Foodie {
 
         while (running) {
             if (thisUser != null) {
-                chooseRestuarantDialog();
+               chooseRestuarantDialog();
             } else {
                 options = ui.getInput("Choose an option: \n Option 1: create a user \n option 2: login \n option 3: Exit");
                 switch (options) {
@@ -111,6 +111,13 @@ public class Foodie {
                 restaurantsByName.add(rName);
             }
         }
+     /*   Restaurant chosenRestuarant = restaurantsByName.get(0);
+        ui.displayMessage("You have chosen: " + chosenRestuarant.getRestaurantName());
+    if(input = chosenRestuarant){
+        choice();
+    }else {
+        ui.displayMessage("Invalid choice. Please try again");
+    }*/
     }
 
    public void searchForDeliveryPrice() {
@@ -136,6 +143,35 @@ public class Foodie {
             String r = String.valueOf(searchForRating.getRating());
             if(r.equalsIgnoreCase(input)){
                 searchRating.add(searchForRating);
+
+            }
+        }
+    }
+
+    public void choice(String chosenRestuarant){
+        for(Restaurant r : restaurantsList) {
+            if (r.getRestaurantName().equalsIgnoreCase(chosenRestuarant) && chosenRestuarant != null) {
+                ui.displayMessage("You have chosen: " + chosenRestuarant);
+
+                String userChoice = ui.getInput("Do you want see the options for \n1: food \n2: drinks \n3: dessert");
+
+                switch (userChoice){
+                    case "1":
+                        r.displayFoodList();
+
+                        break;
+
+                    case "2":
+                        r.displayDrinksList();
+                        break;
+
+                    case "3":
+                        r.displayDessertList();
+                        break;
+                }
+
+
+                String addToOrdre = ui.getInput("Chose what you want to ordre");
 
             }
         }

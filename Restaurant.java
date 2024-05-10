@@ -38,11 +38,38 @@ public class Restaurant {
         return category;
     }
 
+    public List<Food> getFood(){
+        return foodList;
+    }
 
+    public List<Drinks> getDrinks(){
+        return drinksList;
+    }
+
+    public List<Dessert> getDessert(){
+        return dessertList;
+    }
+
+    public void displayFoodList(){
+        for(Food food : foodList){
+            System.out.println("Here is the food list: " + foodList);
+        }
+    }
+
+    public void displayDrinksList(){
+        for(Drinks drinks : drinksList){
+            System.out.println("Here is the drinks list: " + drinksList);
+        }
+    }
+
+    public void displayDessertList(){
+        for(Dessert dessert : dessertList){
+            System.out.println("Here is the dessert list: " + dessertList);
+        }
+    }
 
 
     @Override
-
     public String toString() {
 
 
