@@ -16,4 +16,9 @@ public class Drinks {
     public void setName(String name){
         this.name = name;
     }
+
+    @Override
+    public String toString(){
+        return "Drink of choice: " + name;
+    }
 }

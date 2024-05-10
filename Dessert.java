@@ -14,4 +14,9 @@ public class Dessert {
     public void setName(){
         this.name = name;
     }
+
+    @Override
+    public String toString(){
+        return "Dessert of choice: " + name;
+    }
 }

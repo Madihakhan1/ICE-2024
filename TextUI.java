@@ -15,6 +15,12 @@ public class TextUI {
 
         }
 
+    public void displayRestuarantList(List<Restaurant> in){
+        for(Restaurant r: in){
+            displayMessage(in.indexOf(r) + ". " + r.toString());
+        }
+    }
+
 
 public int showAllRestuarants(List<Restaurant> in, String msg){
     displayMessage(msg);
