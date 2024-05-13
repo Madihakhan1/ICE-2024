@@ -53,6 +53,13 @@ public class User {
         this.orders = orders;
     }
 
+
+    public void addOrder(String order){
+      orders.add(order);
+    }
+
+
+
     public String getAddress() {
         return address;
     }

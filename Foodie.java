@@ -6,9 +6,10 @@ public class Foodie {
 
     private TextUI ui = new TextUI();
     private FileIO io = new FileIO();
+    private Cart cart = new Cart();
 
     private StartMenu startMenu = new StartMenu();
-    private User thisUser = null;
+    private User currentUser = null;
 
     private List<Restaurant> restaurantsList = new ArrayList<>();
 
@@ -24,7 +25,7 @@ public class Foodie {
         boolean running = true;
 
         while (running) {
-            if (thisUser != null) {
+            if (currentUser != null) {
                chooseRestuarantDialog();
             } else {
                 options = ui.getInput("Choose an option: \n Option 1: create a user \n option 2: login \n option 3: Exit");
@@ -33,7 +34,7 @@ public class Foodie {
                         startMenu.createUser();
                         break;
                     case "2":
-                        thisUser = startMenu.login();
+                        currentUser = startMenu.login();
                         break;
                     case "3":
                         running = false;
@@ -69,7 +70,7 @@ public class Foodie {
                 break;
 
             case "6":
-                thisUser = null;
+                currentUser = null;
                 break;
         }
     }
@@ -158,21 +159,31 @@ public class Foodie {
                 switch (userChoice){
                     case "1":
                         r.displayFoodList();
-
+                        String chosenFood = ui.getInput("Choose what you want to cart");
+                        OrderLine foodOrder = new OrderLine();
+                        currentUser.addOrder(chosenFood);
+                        ui.displayMessage("You have added " + chosenFood + " to your cart.");
+                        io.saveOrders(currentUser);
                         break;
 
                     case "2":
                         r.displayDrinksList();
+                        String chosenDrink = ui.getInput("Choose what you want to cart");
+                        OrderLine drinkOrder = new OrderLine();
+                        cart.addToCart(drinkOrder);
+                        ui.displayMessage("You have added " + chosenDrink + "to your cart.");
+                        io.saveOrders(currentUser);
                         break;
 
                     case "3":
                         r.displayDessertList();
+                        String chosenDessert = ui.getInput("Choose what you want to cart");
+                        OrderLine dessertOrder = new OrderLine();
+                        cart.addToCart(dessertOrder);
+                        ui.displayMessage("You have added " + chosenDessert + "to your cart.");
+                        io.saveOrders(currentUser);
                         break;
                 }
-
-
-                String addToOrdre = ui.getInput("Chose what you want to ordre");
-
             }
         }
     }

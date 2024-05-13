@@ -51,20 +51,23 @@ public class Restaurant {
     }
 
     public void displayFoodList(){
+        System.out.println("here is the food list: ");
         for(Food food : foodList){
-            System.out.println("Here is the food list: " + foodList);
+            System.out.println(food);
         }
     }
 
     public void displayDrinksList(){
+        System.out.println("Here is the drinks list: ");
         for(Drinks drinks : drinksList){
-            System.out.println("Here is the drinks list: " + drinksList);
+            System.out.println(drinks);
         }
     }
 
     public void displayDessertList(){
+        System.out.println("Here is the dessert list : " + 1);
         for(Dessert dessert : dessertList){
-            System.out.println("Here is the dessert list: " + dessertList);
+            System.out.println(dessert);
         }
     }
 

@@ -58,6 +58,7 @@ public class FileIO {
                 ordresToSave += o + ",";
             }
             fwSaved.write(ordresToSave + "\n");
+            fwSaved.flush();
             fwSaved.close();
         } catch (IOException e) {
             System.out.println("File was not found");
