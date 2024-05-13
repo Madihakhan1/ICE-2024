@@ -1,5 +1,6 @@
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 public class Cart {
 
@@ -7,8 +8,6 @@ public class Cart {
     Random rand = new Random();
     private int min ;
     private int max;
-    private int[] price  = new int[2];
-
 
 
     public List<OrderLine> orderline;
@@ -22,21 +21,31 @@ public class Cart {
     }
 
 
-  // min 120 og max 300
-  // get random mellem min og max
-
-  public double getTotalPrice(){
+  public int getTotalPrice(){
         min = rand.nextInt(59)+1;
-        max = rand.nextInt(159)+1;
+        max = rand.nextInt(259)+1;
         int totalPrice = min + max;
         
-        for(OrderLine orderline : orderline){
-            totalPrice += orderline.getTotalprice();
+        if(min == max){
+            isDouble = true;
+        }else {
+            isDouble = false;
         }
-
         return totalPrice;
     }
 
+    public int getDeliveryPrice(){
+
+        min = rand.nextInt(29) + 1;
+        max = rand.nextInt(59) + 1;
+        int totalDeliveryPrice = min + max;
+
+        if(min == max){
+            isDouble = true;
+        }else {
+            isDouble = false;
+        }return totalDeliveryPrice;
+    }
 
 
     public void addToCart(OrderLine orderline){
@@ -44,13 +53,5 @@ public class Cart {
     }
 
 
-    @Override
-
-   public String toString(){
-
-        return "Here is the order " + orderline;
-
-
-    }
 
 }

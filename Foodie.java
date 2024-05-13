@@ -99,7 +99,6 @@ public class Foodie {
                 }
             }
               choice(ui.getInput("Choose one of the restuarants"));
-
     }
 
         public void searchForRestuarantName() {
@@ -107,18 +106,19 @@ public class Foodie {
         String input = ui.getInput("Write the name of the Restuarant you a looking for");
         List<Restaurant> restaurantsByName = new LinkedList<>();
         for (Restaurant rName : restaurantsList) {
-            String n = restaurantsByName.getFirst().getRestaurantName();
-            if (n.equalsIgnoreCase(input)) {
+            String name = rName.getRestaurantName();
+            if (name.equalsIgnoreCase(input)) {
                 restaurantsByName.add(rName);
             }
         }
-     /*   Restaurant chosenRestuarant = restaurantsByName.get(0);
-        ui.displayMessage("You have chosen: " + chosenRestuarant.getRestaurantName());
-    if(input = chosenRestuarant){
-        choice();
-    }else {
-        ui.displayMessage("Invalid choice. Please try again");
-    }*/
+        if(restaurantsByName.isEmpty()){
+            System.out.println("No restuarants found by this name: " + input);
+        }else {
+            for(Restaurant name : restaurantsByName){
+                System.out.println(name);
+            }
+        }
+        choice(input);
     }
 
    public void searchForDeliveryPrice() {
@@ -163,16 +163,17 @@ public class Foodie {
                         OrderLine foodOrder = new OrderLine();
                         currentUser.addOrder(chosenFood);
                         ui.displayMessage("You have added " + chosenFood + " to your cart.");
-                        String continueChoice = ui.getInput("Do you want to add more to your cart \n 1: Yes \n 2: No continue to your cart?");
+                        String continueChoiceF = ui.getInput("Do you want to add more to your cart \n 1: Yes \n 2: No continue to your cart?");
 
-                        switch (continueChoice){
+                        switch (continueChoiceF){
                             case "1":
 
                                 break;
 
                             case "2":
                                 //Hvis på currentUser har bestilt og hvad totalen er
-
+                                currentUser.displayOrder();
+                                System.out.println(currentUser);
                                 break;
                         }
 
@@ -185,6 +186,19 @@ public class Foodie {
                         OrderLine drinkOrder = new OrderLine();
                         currentUser.addOrder(chosenDrink);
                         ui.displayMessage("You have added " + chosenDrink + "to your cart.");
+                        String continueChoiceD = ui.getInput("Do you want to add more to your cart \n 1: Yes \n 2: No continue to your cart?");
+
+                        switch (continueChoiceD){
+                            case "1":
+
+                                break;
+
+                            case "2":
+                                //Hvis på currentUser har bestilt og hvad totalen er
+                                currentUser.displayOrder();
+                                System.out.println(currentUser);
+                                break;
+                        }
                         io.saveOrders(currentUser);
                         break;
 
@@ -194,10 +208,23 @@ public class Foodie {
                         OrderLine dessertOrder = new OrderLine();
                         currentUser.addOrder(chosenDessert);
                         ui.displayMessage("You have added " + chosenDessert + "to your cart.");
+                        String continueChoiceDe = ui.getInput("Do you want to add more to your cart \n 1: Yes \n 2: continue to your cart?");
+
+                        switch (continueChoiceDe){
+                            case "1":
+
+                                break;
+
+                            case "2":
+                                currentUser.displayOrder();
+                                System.out.println(currentUser);
+                                break;
+                        }
                         io.saveOrders(currentUser);
                         break;
 
                     case "4": currentUser = null;
+
                     break;
                 }
             }
