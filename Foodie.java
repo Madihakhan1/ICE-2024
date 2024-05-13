@@ -159,30 +159,46 @@ public class Foodie {
                 switch (userChoice){
                     case "1":
                         r.displayFoodList();
-                        String chosenFood = ui.getInput("Choose what you want to cart");
+                        String chosenFood = ui.getInput("Choose what you want to eat");
                         OrderLine foodOrder = new OrderLine();
                         currentUser.addOrder(chosenFood);
                         ui.displayMessage("You have added " + chosenFood + " to your cart.");
+                        String continueChoice = ui.getInput("Do you want to add more to your cart \n 1: Yes \n 2: No continue to your cart?");
+
+                        switch (continueChoice){
+                            case "1":
+
+                                break;
+
+                            case "2":
+                                //Hvis på currentUser har bestilt og hvad totalen er
+
+                                break;
+                        }
+
                         io.saveOrders(currentUser);
                         break;
 
                     case "2":
                         r.displayDrinksList();
-                        String chosenDrink = ui.getInput("Choose what you want to cart");
+                        String chosenDrink = ui.getInput("Choose what you want to drink");
                         OrderLine drinkOrder = new OrderLine();
-                        cart.addToCart(drinkOrder);
+                        currentUser.addOrder(chosenDrink);
                         ui.displayMessage("You have added " + chosenDrink + "to your cart.");
                         io.saveOrders(currentUser);
                         break;
 
                     case "3":
                         r.displayDessertList();
-                        String chosenDessert = ui.getInput("Choose what you want to cart");
+                        String chosenDessert = ui.getInput("Choose what you want to eat");
                         OrderLine dessertOrder = new OrderLine();
-                        cart.addToCart(dessertOrder);
+                        currentUser.addOrder(chosenDessert);
                         ui.displayMessage("You have added " + chosenDessert + "to your cart.");
                         io.saveOrders(currentUser);
                         break;
+
+                    case "4": currentUser = null;
+                    break;
                 }
             }
         }

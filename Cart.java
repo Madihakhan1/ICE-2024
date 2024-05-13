@@ -3,6 +3,13 @@ import java.util.List;
 
 public class Cart {
 
+    private boolean isDouble;
+    Random rand = new Random();
+    private int min ;
+    private int max;
+    private int[] price  = new int[2];
+
+
 
     public List<OrderLine> orderline;
 
@@ -14,16 +21,15 @@ public class Cart {
         return orderline;
     }
 
-  /*
-   min 120 og max 300
-   get random mellem min og max
+
+  // min 120 og max 300
+  // get random mellem min og max
 
   public double getTotalPrice(){
-        double min = 120;
-        double max = 300;
-
-        double getTotalprice = 0;
-
+        min = rand.nextInt(59)+1;
+        max = rand.nextInt(159)+1;
+        int totalPrice = min + max;
+        
         for(OrderLine orderline : orderline){
             totalPrice += orderline.getTotalprice();
         }
@@ -31,7 +37,7 @@ public class Cart {
         return totalPrice;
     }
 
-   */
+
 
     public void addToCart(OrderLine orderline){
        this.orderline.add(orderline);
