@@ -54,6 +54,7 @@ public class User {
 
     @Override
     public String toString(){
+        //Fomatering så vores total 
         double unformatedTotalNum = (float)(cart.getTotalPrice() * cart.randomDiscount());
         DecimalFormat formatedTotal = new DecimalFormat("#.00");
         double unformatedPercentage = (float)((float)(cart.randomDiscount() * 100));
