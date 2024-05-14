@@ -34,6 +34,11 @@ public class Cart {
         return totalPrice;
     }
 
+    public double randomDiscount(){
+        return randNum;
+    }
+
+
     public void addToCart(OrderLine orderline){
        this.orderline.add(orderline);
     }

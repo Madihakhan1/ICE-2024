@@ -57,5 +57,6 @@ public class User {
         return "Here is your order: " + orders + "\n" +
                 "and the total is: " + cart.getTotalPrice() + " kr." + "\n" +
                 "and the delivery price is:" + cart.getDeliveryPrice() + " kr.";
+
     }
 }
