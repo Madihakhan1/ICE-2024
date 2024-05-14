@@ -8,7 +8,7 @@ public class User {
     private String userPassword;
     private String address;
 
-    private List<String> food = new ArrayList<>();
+   // private List<String> food = new ArrayList<>();
     private List<String> orders = new ArrayList<>();
     Cart cart = new Cart();
 
@@ -31,10 +31,10 @@ public class User {
         return orders;
     }
 
-    public void setFood(List<String> food) {
+ /*   public void setFood(List<String> food) {
         this.food = food;
     }
-
+*/
 
     public void displayOrder(){
         for(String order : orders){

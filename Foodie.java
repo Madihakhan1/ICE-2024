@@ -21,7 +21,7 @@ public class Foodie {
     public void startDialog() {
         setUp();
         ui.displayMessage("Welcome to Foodie, do you want to create a user or login?");
-        String options = " ";
+        String options = "";
         boolean running = true;
 
         while (running) {
@@ -34,6 +34,7 @@ public class Foodie {
                         startMenu.createUser();
                         break;
                     case "2":
+                        //Det starMenu.login metoden returnere er det currentuser bliver sat til
                         currentUser = startMenu.login();
                         break;
                     case "3":
@@ -47,7 +48,7 @@ public class Foodie {
 
 
     public void chooseRestuarantDialog() {
-        String differentOptions = ui.getInput("Please choose an option: \n Option 1: See all restuarants \n Option 2: search after category \n Option 3: search after a restuarant \n Option 4: search after a delivery price \n Option 5: search after rating ");
+        String differentOptions = ui.getInput("Please choose an option: \n Option 1: See all restuarants \n Option 2: search after category \n Option 3: search after a restuarant \n Option 4: search after a delivery price \n Option 5: search after rating, \n Option 6: logout ");
         switch (differentOptions) {
             case "1":
                 ui.displayRestuarantList(restaurantsList);

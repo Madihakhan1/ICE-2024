@@ -17,12 +17,15 @@ public class FileIO {
             Scanner scanner = new Scanner(file);
             scanner.nextLine(); //skipping the header line
             while (scanner.hasNext()) {
+                //Læs den næste linje og gem den i line
                 String line = scanner.nextLine();
+                //Trim fjerner mellemrum i start og slutning
                 line = line.trim();
                 String[] splitted = line.split(",");
+                //Her laver vi et user object og trimmer på 0,1 og 2 index
                 User loaded = new User(splitted[0].trim(), splitted[1].trim(), splitted[2].trim());
-                List<String> d = new LinkedList<>();
-                loaded.setFood(d);
+            //    List<String> d = new LinkedList<>();
+          //      loaded.setFood(d);
                 readUsers.add(loaded); // Adding to the local list
             }
             scanner.close();
@@ -39,6 +42,7 @@ public class FileIO {
             FileWriter writer = new FileWriter("Doc/userData");
             writer.write("Name, Password, Address \n");//Giv csv filen en header
             for (User u : users) {
+                //Jeg bygger denne String før den skriver til filen
                 String textTosave = u.getUserName() + "," + u.getUserPassword() + "," + u.getAddress() + "\n";
                 writer.write(textTosave);
             }
@@ -50,11 +54,13 @@ public class FileIO {
 
 
     public void saveOrders(User user) {
+        //Den trækker userens orders ud og gemmer den i den lokale variabel, som er orders
         List<String> orders = user.getOrders();
         try {
             FileWriter fwSaved = new FileWriter("Doc/savedOrders");
             String ordresToSave = user.getUserName() + ":";
             for (String o : orders) {
+                // Samme som "ordersToSave = OrdersToSave +"
                 ordresToSave += o + ",";
             }
             fwSaved.write(ordresToSave + "\n");
@@ -65,9 +71,7 @@ public class FileIO {
         }
     }
 
-    public List<String> showSavedOrdreHistory(User user) {
-        return showSavedOrdreHistory(user);
-    }
+
     public List<Restaurant> readRestaurantData() {
         File file = new File("Doc/Restaurant");
         List<Restaurant> restaurants = new LinkedList<>();
@@ -84,7 +88,7 @@ public class FileIO {
                 String[] drinksString = splitted[3].split(",");
                 String[] dessertString = splitted[4].split(",");
 
-
+                //Løber igennem food String[] array og gemmer i en foodListe
                 List<Food> foodList = new LinkedList<>();
                 for (String foodItem : foodString) {
                     foodList.add(new Food(foodItem.trim()));
