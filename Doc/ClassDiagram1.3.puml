@@ -136,7 +136,8 @@ class Discount{
 - List<User> userDiscount
 + Discount(double discount)
 + void setDiscount()
-+ void getDiscount()
++ void Restaurant o-- Discount
+getDiscount()
 + void addDiscountToOrder()
 + String toString()
 }
@@ -162,19 +163,18 @@ Main o-- StartMenu
 StartMenu o-- TextUI
 StartMenu o-- FileIO
 StartMenu o-- User
-
-User *-- Order
-User o-- Discount
-
 StartMenu *-- Foodie
 
-Order *-- Cart
+Foodie *-- Restaurant
+
+User *-- OrderLine
+User o-- Discount
+
+OrderLine *-- Cart
 
 Restaurant *-- Food
 Restaurant *-- Drinks
 Restaurant *-- Dessert
-
-
 
 @enduml
 

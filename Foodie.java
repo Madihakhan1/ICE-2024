@@ -167,7 +167,7 @@ public class Foodie {
 
                         switch (continueChoiceF){
                             case "1":
-
+                                searchForCategory();
                                 break;
 
                             case "2":
@@ -190,7 +190,7 @@ public class Foodie {
 
                         switch (continueChoiceD){
                             case "1":
-
+                                searchForCategory();
                                 break;
 
                             case "2":

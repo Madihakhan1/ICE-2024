@@ -27,33 +27,14 @@ public class User {
         return userPassword;
     }
 
-    public List<String>getFood(){
-        return food;
-    }
-
     public List<String>getOrders(){
         return orders;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public void setFood(List<String> food) {
         this.food = food;
     }
 
-    public void setOrders(List<String> orders) {
-        this.orders = orders;
-    }
 
     public void displayOrder(){
         for(String order : orders){

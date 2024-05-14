@@ -4,11 +4,9 @@ import java.util.Random;
 
 public class Cart {
 
-    private boolean isDouble;
     Random rand = new Random();
-    private int min ;
-    private int max;
-
+    private int deliveryPrice;
+    private int totalPrice;
 
     public List<OrderLine> orderline;
 
@@ -21,17 +19,8 @@ public class Cart {
         totalPrice = rand.nextInt(300);
     }
 
-    public int getDeliveryPrice(){
-
-        min = rand.nextInt(29) + 1;
-        max = rand.nextInt(59) + 1;
-        int totalDeliveryPrice = min + max;
-
-        if(min == max){
-            isDouble = true;
-        }else {
-            isDouble = false;
-        }return totalDeliveryPrice;
+    public void calculateDeliveryPrice(){
+        deliveryPrice = rand.nextInt(59);
     }
 
 
@@ -48,7 +37,6 @@ public class Cart {
     public void addToCart(OrderLine orderline){
        this.orderline.add(orderline);
     }
-
 
 
 }

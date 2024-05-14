@@ -17,6 +17,6 @@ public class Dessert {
 
     @Override
     public String toString(){
-        return "Dessert of choice: " + name;
+        return name;
     }
 }
