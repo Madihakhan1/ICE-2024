@@ -23,10 +23,8 @@ public class FileIO {
                 line = line.trim();
                 String[] splitted = line.split(",");
                 //Her laver vi et user object og trimmer på 0,1 og 2 index
-                User loaded = new User(splitted[0].trim(), splitted[1].trim(), splitted[2].trim());
-            //    List<String> d = new LinkedList<>();
-          //      loaded.setFood(d);
-                readUsers.add(loaded); // Adding to the local list
+                User userObj = new User(splitted[0].trim(), splitted[1].trim(), splitted[2].trim());
+                readUsers.add(userObj); // Adding the user object to the local list
             }
             scanner.close();
         } catch (Exception e) {

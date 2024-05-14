@@ -31,10 +31,8 @@ public class User {
         return orders;
     }
 
- /*   public void setFood(List<String> food) {
-        this.food = food;
-    }
-*/
+
+
 
     public void displayOrder(){
         for(String order : orders){
