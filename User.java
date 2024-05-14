@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +10,6 @@ public class User {
 
     private List<String> food = new ArrayList<>();
     private List<String> orders = new ArrayList<>();
-
     Cart cart = new Cart();
 
 
@@ -54,8 +54,14 @@ public class User {
 
     @Override
     public String toString(){
+        double unformatedTotalNum = (float)(cart.getTotalPrice() * cart.randomDiscount());
+        DecimalFormat formatedTotal = new DecimalFormat("#.00");
+        double unformatedPercentage = (float)((float)(cart.randomDiscount() * 100));
+        DecimalFormat formatedPercentage = new DecimalFormat("#");
+
         return "Here is your order: " + orders + "\n" +
-                "and the total is: " + cart.getTotalPrice() + " kr." + "\n" +
+                "and the total is: " + formatedTotal.format(unformatedTotalNum) + " kr." + "\n" +
+                "you have saved " + formatedPercentage.format(unformatedPercentage) + " %" + "\n" +
                 "and the delivery price is:" + cart.getDeliveryPrice() + " kr.";
 
     }

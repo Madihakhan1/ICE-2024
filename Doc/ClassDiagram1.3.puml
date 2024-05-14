@@ -45,16 +45,6 @@ class OrderLine{
 - String name;
 }
 
-class Discount{
-- double discount
-- List<User> userDiscount
-+ Discount(double discount)
-+ void void setDiscount()
-+ void double getDiscount()
-+ void double addDiscountToOrder()
-+ String toString()
-}
-
 class Cart{
 Random rand = new Random()
 - int deliveryPrice

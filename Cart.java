@@ -7,6 +7,8 @@ public class Cart {
     Random rand = new Random();
     private int deliveryPrice;
     private int totalPrice;
+    private int randomDiscount;
+    private double randNum = Math.random()/2;
 
     public List<OrderLine> orderline;
 
@@ -42,6 +44,4 @@ public class Cart {
     public void addToCart(OrderLine orderline){
        this.orderline.add(orderline);
     }
-
-
 }
