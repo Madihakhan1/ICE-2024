@@ -1,0 +1,180 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+class Main{
++ static void main(string [] args)
+}
+
+class StartMenu{
+- String userName
+- String userPassword
+- String address
+- List<User> registeredUsers = new LinkedList<>()
+- List<String> restaurant = new ArrayList<>()
+- TextUI ui
+- FileIO io
++ StartMenu()
++ void CreateUser()
++ User Login()
+}
+
+class User{
+- String userName
+- String userPassword
+- String address;
+- List <String> food
+- List <String> orders
+  Cart cart = new Cart()
++ User(String userName,String userPassword,String address)
++ String getUserName()
++ String getUserPassword()
++ List<String> getFood()
++ List<String> getOrders()
++ String getUserName()
++ String getUserPassword()
++ List<String>getOrders()
++ void setFood(List<String>food)
++ void displayOrder()
++ void addOrder(String order)
++ String getAddress()
++ String toString()
+
+}
+
+class OrderLine{
+- String name;
+}
+
+class Discount{
+- double discount
+- List<User> userDiscount
++ Discount(double discount)
++ void void setDiscount()
++ void double getDiscount()
++ void double addDiscountToOrder()
++ String toString()
+}
+
+class Cart{
+Random rand = new Random()
+- int deliveryPrice
+- int totalPrice
++ list<OrderLine>orderline
++ Cart()
++ void calculateTotalPrice()
++ void calculateDeliveryPrice()
++ int getDeliveryPrice()
++ int getTotalPrice()
++ void addToCart(OrderLine orderline)
+}
+
+ class Restaurant{
+- String restaurantName
+- String category
+- String rating
+- String deliveryPrice
+- List<Drink> drinksList
+- List<Food> foodList
+- List <Dessert> dessertList
++ Restaurant(String restaurantName, String category, String rating, List<Food> foodList, List<Drinks>drinksList, List <Dessert> dessertList, String deliveryPrice)
++ String getRestaurantName()
++ String getRating()
++ String getDeliveryPrice()
++ String getCategory()
++ List<Food>getFood()
++ List<Drinks>getDrinks()
++ List<Dessert>getDessert()
++ void displayFoodList()
++ void displayDrinksList()
++ void displayDesserList()
++ String toString()
+}
+
+class Foodie{
+- TextUI ui
+- FileIO io
+- Cart cart = new cart()
+- StartMenu startMenu = new StartMenu()
+- User currentUser
+- List<Restaurant> restaurantList = new ArrayList<>()
++ void SetUp()
++ void startDialog()
++ void chooseRestaurantDialog()
++ void searchForCategory()
++ void searchForRestuarantName()
++ void searchForDeliveryPrice()
++ void searchForRating()
++ void choice(String chooseRestaurant)
+}
+
+class Food{
+- String name;
++ Food(String name)
++ String getName()
++ void setName()
++ String toString()
+}
+
+class Drinks{
+- String name;
++ Drinks(String name)
++ String getName()
++ void setName()
++ String toString()
+}
+
+class Dessert{
+- String name;
++ Dessert(String name)
++ String getName()
++ void setName()
++ String toString()
+}
+
+class Discount{
+- double discount
+- List<User> userDiscount
++ Discount(double discount)
++ void setDiscount()
++ void getDiscount()
++ void addDiscountToOrder()
++ String toString()
+}
+
+class TextUI{
++ String getInput(String msg)
++ void displayMessage(String msg)
++ void displayRestuarantList(List<Restaurant> in)
++ int showAllRestuarants((List<Restaurant> in, String msg)
+}
+
+class FileIO{
++ List<User> readUserData()
++ void saveUserData (List<User> users)
++ void saveOrders (User user)
++ List<String> ShowSavedOrdreHistory(User user)
++ List<Restaurant> readRestuarantData()
+}
+
+
+Main o-- StartMenu
+
+StartMenu o-- TextUI
+StartMenu o-- FileIO
+StartMenu o-- User
+
+User *-- Order
+User o-- Discount
+
+StartMenu *-- Foodie
+
+Order *-- Cart
+
+Restaurant *-- Food
+Restaurant *-- Drinks
+Restaurant *-- Dessert
+
+
+
+@enduml
+

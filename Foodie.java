@@ -212,7 +212,7 @@ public class Foodie {
 
                         switch (continueChoiceDe){
                             case "1":
-
+                                searchForCategory();
                                 break;
 
                             case "2":

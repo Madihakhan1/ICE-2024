@@ -3,7 +3,7 @@ public class OrderLine {
 
 
     private String name;
-    private int antal;
+
 
 
 }

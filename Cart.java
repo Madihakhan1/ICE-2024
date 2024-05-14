@@ -16,22 +16,9 @@ public class Cart {
         this.orderline = new LinkedList<>();
     }
 
-    public List<OrderLine> getOrderline() {
-        return orderline;
-    }
 
-
-  public int getTotalPrice(){
-        min = rand.nextInt(59)+1;
-        max = rand.nextInt(259)+1;
-        int totalPrice = min + max;
-        
-        if(min == max){
-            isDouble = true;
-        }else {
-            isDouble = false;
-        }
-        return totalPrice;
+    public void calculateTotalPrice(){
+        totalPrice = rand.nextInt(300);
     }
 
     public int getDeliveryPrice(){
@@ -47,6 +34,16 @@ public class Cart {
         }return totalDeliveryPrice;
     }
 
+
+    public int getDeliveryPrice() {
+        calculateDeliveryPrice();
+        return deliveryPrice;
+    }
+
+    public int getTotalPrice() {
+        calculateTotalPrice();
+        return totalPrice;
+    }
 
     public void addToCart(OrderLine orderline){
        this.orderline.add(orderline);

@@ -19,6 +19,6 @@ public class Drinks {
 
     @Override
     public String toString(){
-        return "Drink of choice: " + name;
+        return name;
     }
 }
