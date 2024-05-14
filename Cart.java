@@ -36,6 +36,10 @@ public class Cart {
         return totalPrice;
     }
 
+    public boolean giveDiscount(){
+        return Math.random()>0.5;
+    }
+
     public double randomDiscount(){
         return randNum;
     }

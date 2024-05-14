@@ -38,7 +38,6 @@ class User{
 + void addOrder(String order)
 + String getAddress()
 + String toString()
-
 }
 
 class OrderLine{
@@ -49,6 +48,7 @@ class Cart{
 Random rand = new Random()
 - int deliveryPrice
 - int totalPrice
+- in
 + list<OrderLine>orderline
 + Cart()
 + void calculateTotalPrice()
