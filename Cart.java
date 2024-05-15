@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Cart {
 
-    Random rand = new Random();
+    private Random rand = new Random();
     private int deliveryPrice;
     private int totalPrice;
     private double randNum = Math.random()/2;

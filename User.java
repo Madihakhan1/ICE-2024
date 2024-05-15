@@ -9,7 +9,7 @@ public class User {
     private String address;
 
     private ArrayList<String> orders = new ArrayList<>();
-    Cart cart = new Cart();
+    private Cart cart = new Cart();
 
 
     public User(String userName, String userPassword, String address){
