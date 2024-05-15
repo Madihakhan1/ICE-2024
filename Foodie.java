@@ -43,7 +43,6 @@ public class Foodie {
                 }
             }
         }
-
     }
 
 
@@ -94,7 +93,7 @@ public class Foodie {
     }
 
         public void searchForRestuarantName() {
-        System.out.println(" ");
+
         String input = ui.getInput("Write the name of the Restuarant you a looking for");
         List<Restaurant> restaurantsByName = new LinkedList<>();
         for (Restaurant rName : restaurantsList) {
@@ -186,9 +185,6 @@ public class Foodie {
                         io.saveOrders(currentUser);
                         break;
 
-                    case "4": currentUser = null;
-
-                    break;
                 }
             }
         }

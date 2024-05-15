@@ -31,15 +31,10 @@ public class User {
     }
 
 
-
-
     public void displayOrder(){
         for(String order : orders){
-
-            //System.out.println("Your order: " + order + "\nAnd the total price is: " +  cart.getTotalPrice() + " kr. " + "Your delivery price is: "  + cart.getDeliveryPrice() + " kr.");
          }
     }
-
 
     public void addOrder(String order){
       orders.add(order);
@@ -71,7 +66,9 @@ public class User {
         return "Here is your order: " + orders + "\n" +
                 "and the total is: " + formatedTotal.format(unformatedTotalNum) + " kr." + "\n" +
                 "you have saved " + formatedPercentage.format(unformatedPercentage) + " %" + "\n" +
-                "and the delivery price is:" + cart.getDeliveryPrice() + " kr.";
+                "and the delivery price is: " + cart.getDeliveryPrice() + " kr." + "\n" +
+                "\n" +
+                "Thank you for your order! \nyour ordre is on the way, it arrives in 30 minuts \n";
 
     }
 }

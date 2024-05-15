@@ -8,7 +8,6 @@ import java.io.File;
 
 public class FileIO {
 
-   // List<User> loadedUsers = new LinkedList<>();
 
     public List<User> readUserData() {
         List<User> readUsers = new LinkedList<>();
@@ -111,8 +110,6 @@ public class FileIO {
         }
         return restaurants;
     }
-
-
 }
 
 
