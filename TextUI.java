@@ -22,14 +22,6 @@ public class TextUI {
     }
 
 
-public int showAllRestuarants(List<Restaurant> in, String msg){
-    displayMessage(msg);
-    //displayList(optionslist, "");
-    String input = getInput("");//1
-    //  lav input om til en int
-    int choice = Integer.parseInt(input);
-    return choice;
-    }
 }
 
 

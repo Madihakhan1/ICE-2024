@@ -40,7 +40,4 @@ public class Cart {
         return randNum;
     }
 
-    public void addToCart(OrderLine orderline){
-       this.orderline.add(orderline);
-    }
 }

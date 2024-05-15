@@ -26,29 +26,12 @@ public class Restaurant {
         return restaurantName;
     }
 
-    public String getRating() {
-        return rating;
-    }
 
-    public String getDelveryPrice() {
-        return delveryPrice;
-    }
 
     public String getCategory() {
         return category;
     }
 
-    public List<Food> getFood(){
-        return foodList;
-    }
-
-    public List<Drinks> getDrinks(){
-        return drinksList;
-    }
-
-    public List<Dessert> getDessert(){
-        return dessertList;
-    }
 
     public void displayFoodList(){
         System.out.println("here is the food list: ");
