@@ -5,8 +5,6 @@ public class Restaurant {
 
     private String restaurantName;
     private String category;
-    private String rating;
-    private String delveryPrice;
     private List<Drinks> drinksList = new LinkedList<>();
     private List<Food> foodList = new LinkedList<>();
     private List<Dessert> dessertList = new LinkedList<>();
@@ -18,8 +16,7 @@ public class Restaurant {
         this.foodList = foodList;
         this.drinksList = drinksList;
         this.dessertList = dessertList;
-        this.rating = rating;
-        this.delveryPrice = delveryPrice;
+
     }
 
     public String getRestaurantName() {
