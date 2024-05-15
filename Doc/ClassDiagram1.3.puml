@@ -22,7 +22,7 @@ class User{
 - String userPassword
 - String address;
 - ArrayList <String> orders = new ArrayList<>()
-  Cart cart = new Cart()
+- Cart cart = new Cart()
 + User(String userName,String userPassword,String address)
 + String getUserName()
 + String getUserPassword()
@@ -35,7 +35,7 @@ class User{
 
 
 class Cart{
-Random rand = new Random()
+- Random rand = new Random()
 - int deliveryPrice
 - int totalPrice
 - double randNum = Math.random()/2
