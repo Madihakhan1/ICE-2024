@@ -33,17 +33,12 @@ class User{
 + String toString()
 }
 
-class OrderLine{
-
-}
-
 
 class Cart{
 Random rand = new Random()
 - int deliveryPrice
 - int totalPrice
 - double randNum = Math.random()/2
-+ list<OrderLine>orderline
 + Cart()
 + void calculateTotalPrice()
 + void calculateDeliveryPrice()
@@ -133,9 +128,9 @@ StartMenu *-- Foodie
 
 Foodie *-- Restaurant
 
-User *-- OrderLine
+Restaurant o-- Cart
 
-OrderLine *-- Cart
+User o-- Cart
 
 Restaurant *-- Food
 Restaurant *-- Drinks
