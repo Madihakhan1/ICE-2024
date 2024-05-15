@@ -45,8 +45,8 @@ public class FileIO {
                 writer.write(textTosave);
             }
             writer.close();
-        } catch (IOException e) {
-            System.out.println("File was not found");
+        } catch (Exception e) {
+            System.out.println("File was not found" + e.getMessage());
         }
     }
 
@@ -64,8 +64,8 @@ public class FileIO {
             fwSaved.write(ordresToSave + "\n");
             fwSaved.flush();
             fwSaved.close();
-        } catch (IOException e) {
-            System.out.println("File was not found");
+        } catch (Exception e) {
+            System.out.println("File was not found" + e.getMessage());
         }
     }
 

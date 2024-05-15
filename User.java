@@ -8,8 +8,7 @@ public class User {
     private String userPassword;
     private String address;
 
-   // private List<String> food = new ArrayList<>();
-    private List<String> orders = new ArrayList<>();
+    private ArrayList<String> orders = new ArrayList<>();
     Cart cart = new Cart();
 
 
@@ -64,7 +63,7 @@ public class User {
         double unformatedPercentage = 0;
         if (cart.giveDiscount()) {
             unformatedTotalNum = (float)(cart.getTotalPrice() * cart.randomDiscount());
-            unformatedPercentage = (float)((float)(cart.randomDiscount() * 100));
+            unformatedPercentage = ((float)(cart.randomDiscount() * 100));
         }
         DecimalFormat formatedTotal = new DecimalFormat("#.00");
         DecimalFormat formatedPercentage = new DecimalFormat("#");

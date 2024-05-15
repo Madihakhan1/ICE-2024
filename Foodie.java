@@ -48,7 +48,7 @@ public class Foodie {
 
 
     public void chooseRestuarantDialog() {
-        String differentOptions = ui.getInput("Please choose an option: \n Option 1: See all restuarants \n Option 2: search after category \n Option 3: search after a restuarant \n Option 4: search after a delivery price \n Option 5: search after rating, \n Option 6: logout ");
+        String differentOptions = ui.getInput("Please choose an option: \n Option 1: See all restuarants \n Option 2: search after category \n Option 3: search after a restuarant \n Option 4: logout ");
         switch (differentOptions) {
             case "1":
                 ui.displayRestuarantList(restaurantsList);
@@ -63,14 +63,6 @@ public class Foodie {
                 break;
 
             case "4":
-                searchForDeliveryPrice();
-                break;
-
-            case "5":
-               searchForRating();
-                break;
-
-            case "6":
                 currentUser = null;
                 break;
         }
@@ -78,7 +70,6 @@ public class Foodie {
 
 
     public void searchForCategory() {
-            System.out.println(" ");
 
             String input = ui.getInput("Write the category you are looking for");
 
@@ -122,33 +113,7 @@ public class Foodie {
         choice(input);
     }
 
-   public void searchForDeliveryPrice() {
-        System.out.println(" ");
-        String input = ui.getInput("Search after the delivery price");
-        List<Restaurant> deliveryPrice = new LinkedList<>();
-        for (Restaurant dPrice : restaurantsList) {
-            String dp = String.valueOf(deliveryPrice.getFirst().getDelveryPrice());
-            if (dp.equalsIgnoreCase(input)) {
-                deliveryPrice.add(dPrice);
-            }
-        }
-    }
 
-   public void searchForRating() {
-
-        System.out.println(" ");
-
-        String input = ui.getInput("Search for rating");
-        List<Restaurant> searchRating = new LinkedList<>();
-
-        for (Restaurant searchForRating : restaurantsList) {
-            String r = String.valueOf(searchForRating.getRating());
-            if(r.equalsIgnoreCase(input)){
-                searchRating.add(searchForRating);
-
-            }
-        }
-    }
 
     public void choice(String chosenRestuarant){
         for(Restaurant r : restaurantsList) {
@@ -161,7 +126,6 @@ public class Foodie {
                     case "1":
                         r.displayFoodList();
                         String chosenFood = ui.getInput("Choose what you want to eat");
-                        OrderLine foodOrder = new OrderLine();
                         currentUser.addOrder(chosenFood);
                         ui.displayMessage("You have added " + chosenFood + " to your cart.");
                         String continueChoiceF = ui.getInput("Do you want to add more to your cart \n 1: Yes \n 2: No continue to your cart?");
@@ -184,7 +148,6 @@ public class Foodie {
                     case "2":
                         r.displayDrinksList();
                         String chosenDrink = ui.getInput("Choose what you want to drink");
-                        OrderLine drinkOrder = new OrderLine();
                         currentUser.addOrder(chosenDrink);
                         ui.displayMessage("You have added " + chosenDrink + "to your cart.");
                         String continueChoiceD = ui.getInput("Do you want to add more to your cart \n 1: Yes \n 2: No continue to your cart?");
@@ -206,7 +169,6 @@ public class Foodie {
                     case "3":
                         r.displayDessertList();
                         String chosenDessert = ui.getInput("Choose what you want to eat");
-                        OrderLine dessertOrder = new OrderLine();
                         currentUser.addOrder(chosenDessert);
                         ui.displayMessage("You have added " + chosenDessert + "to your cart.");
                         String continueChoiceDe = ui.getInput("Do you want to add more to your cart \n 1: Yes \n 2: continue to your cart?");
