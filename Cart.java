@@ -8,11 +8,9 @@ public class Cart {
     private int deliveryPrice;
     private int totalPrice;
     private double randNum = Math.random()/2;
-    public List<OrderLine> orderline;
 
-    public Cart(){
-        this.orderline = new LinkedList<>();
-    }
+    public Cart(){}
+
 
     public void calculateTotalPrice(){
         totalPrice = rand.nextInt(300);
