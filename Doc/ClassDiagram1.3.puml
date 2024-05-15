@@ -10,7 +10,6 @@ class StartMenu{
 - String userPassword
 - String address
 - List<User> registeredUsers = new LinkedList<>()
-- List<String> restaurant = new ArrayList<>()
 - TextUI ui
 - FileIO io
 + StartMenu()
@@ -22,18 +21,12 @@ class User{
 - String userName
 - String userPassword
 - String address;
-- List <String> food
-- List <String> orders
+- ArrayList <String> orders = new ArrayList<>()
   Cart cart = new Cart()
 + User(String userName,String userPassword,String address)
 + String getUserName()
 + String getUserPassword()
-+ List<String> getFood()
 + List<String> getOrders()
-+ String getUserName()
-+ String getUserPassword()
-+ List<String>getOrders()
-+ void setFood(List<String>food)
 + void displayOrder()
 + void addOrder(String order)
 + String getAddress()
@@ -49,14 +42,15 @@ class Cart{
 Random rand = new Random()
 - int deliveryPrice
 - int totalPrice
-- in
+- double randNum = Math.random()/2
 + list<OrderLine>orderline
 + Cart()
 + void calculateTotalPrice()
 + void calculateDeliveryPrice()
 + int getDeliveryPrice()
 + int getTotalPrice()
-+ void addToCart(OrderLine orderline)
++ boolean giveDiscount()
++ double randomDiscount()
 }
 
  class Restaurant{
@@ -69,12 +63,7 @@ Random rand = new Random()
 - List <Dessert> dessertList
 + Restaurant(String restaurantName, String category, String rating, List<Food> foodList, List<Drinks>drinksList, List <Dessert> dessertList, String deliveryPrice)
 + String getRestaurantName()
-+ String getRating()
-+ String getDeliveryPrice()
 + String getCategory()
-+ List<Food>getFood()
-+ List<Drinks>getDrinks()
-+ List<Dessert>getDessert()
 + void displayFoodList()
 + void displayDrinksList()
 + void displayDesserList()
@@ -93,8 +82,6 @@ class Foodie{
 + void chooseRestaurantDialog()
 + void searchForCategory()
 + void searchForRestuarantName()
-+ void searchForDeliveryPrice()
-+ void searchForRating()
 + void choice(String chooseRestaurant)
 }
 
@@ -122,29 +109,17 @@ class Dessert{
 + String toString()
 }
 
-class Discount{
-- double discount
-- List<User> userDiscount
-+ Discount(double discount)
-+ void setDiscount()
-+ void Restaurant o-- Discount
-getDiscount()
-+ void addDiscountToOrder()
-+ String toString()
-}
 
 class TextUI{
 + String getInput(String msg)
 + void displayMessage(String msg)
 + void displayRestuarantList(List<Restaurant> in)
-+ int showAllRestuarants((List<Restaurant> in, String msg)
 }
 
 class FileIO{
 + List<User> readUserData()
 + void saveUserData (List<User> users)
 + void saveOrders (User user)
-+ List<String> ShowSavedOrdreHistory(User user)
 + List<Restaurant> readRestuarantData()
 }
 
@@ -159,7 +134,6 @@ StartMenu *-- Foodie
 Foodie *-- Restaurant
 
 User *-- OrderLine
-User o-- Discount
 
 OrderLine *-- Cart
 
